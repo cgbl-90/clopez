@@ -1,0 +1,68 @@
+:root {
+  --clr-primary: #03045e;
+  --clr-secondary: #0077b6;
+  --clr-accent: #6590ab;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+}
+.pl-left,
+.pl-right {
+  width: 50%;
+  border: 5px solid var(--clr-primary);
+}
+h1 {
+  padding: 1rem;
+  font-size: 4rem;
+}
+h3 {
+  color: white;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+img:hover,
+img:focus {
+  opacity: 0.3;
+}
+.wrapper {
+  background-image: linear-gradient(
+    90deg,
+    var(--clr-secondary) 50%,
+    var(--clr-primary)
+  );
+}
+footer {
+  margin: 0px;
+  padding: 2rem;
+  background-color: var(--clr-secondary);
+}
+.pl-right {
+  color: white;
+  background-color: var(--clr-primary);
+  transition: 0.3s ease-in-out;
+}
+.pl-right:hover,
+.pl-right:focus {
+  background-color: var(--clr-secondary);
+  border: 5px solid var(--clr-secondary);
+}
+.material-symbols-outlined {
+  margin-left: 30px;
+  padding: 3px;
+  font-size: 2rem;
+  border: 2px solid black;
+  transition: 0.2s ease-in-out;
+}
+.material-symbols-outlined:hover,
+.material-symbols-outlined:focus {
+  transform: scale(1.3);
+}

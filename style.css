@@ -24,18 +24,17 @@ h1 {
 h3 {
   color: white;
 }
-img {
+.pics {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-img:hover,
-img:focus {
+.pics:hover,
+.pics:focus {
   opacity: 0.3;
 }
 .wrapper {
   background-image: linear-gradient(
-    90deg,
     var(--clr-secondary) 50%,
     var(--clr-primary)
   );
@@ -55,17 +54,37 @@ footer {
   background-color: var(--clr-secondary);
   border: 5px solid var(--clr-secondary);
 }
-span {
+.icons {
   margin-left: 30px;
-  padding: 3px;
-  font-size: 2rem;
+  padding: 4px;
+  width: 2rem;
   border: 2px solid black;
   transition: 0.2s ease-in-out;
 }
-.material-symbols-outlined:hover,
-.material-symbols-outlined:focus {
+.icons:hover,
+.icons:focus {
   transform: scale(1.3);
 }
 .txt-r {
   float: right;
+}
+
+@media (max-width: 700px) {
+  .box {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .pl-left,
+  .pl-right {
+    width: 100%;
+  }
+  .txt-r {
+    float: center;
+  }
+  footer {
+    text-align: center;
+  }
+  .icons {
+    margin-bottom: 30px;
+  }
 }

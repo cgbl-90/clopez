@@ -3,7 +3,11 @@
   --clr-secondary: #0077b6;
   --clr-accent: #6590ab;
 }
-
+a,
+button {
+  all: unset;
+  cursor: pointer;
+}
 body {
   font-family: "Space Grotesk", sans-serif;
 }
@@ -20,6 +24,9 @@ body {
 h1 {
   padding: 1rem;
   font-size: 4rem;
+}
+h2 {
+  padding: 1rem;
 }
 h3 {
   color: white;

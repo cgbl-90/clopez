@@ -16,6 +16,12 @@ body {
   flex-direction: row;
   height: 50vh;
 }
+.box-primary {
+  height: fit-content;
+}
+.box-secondary {
+  width: 1fr auto;
+}
 .pl-left,
 .pl-right {
   width: 50%;
@@ -24,6 +30,9 @@ body {
 h1 {
   padding: 1rem;
   font-size: 4rem;
+}
+.pl-right h1 {
+  text-shadow: 5px 5px var(--clr-primary);
 }
 h2 {
   padding: 1rem;
@@ -75,6 +84,17 @@ footer {
 .txt-r {
   float: right;
 }
+.container {
+  display: grid;
+  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+h5,
+.material-symbols-outlined {
+  margin: 0;
+  padding: 5px;
+}
 
 @media (max-width: 700px) {
   .box {
@@ -94,4 +114,32 @@ footer {
   .icons {
     margin-bottom: 30px;
   }
+}
+@media (max-width: 485px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.square {
+  padding: 2px;
+  border: 1px solid white;
+  margin: 2px;
+  text-align: center;
+}
+.btn-right {
+  text-align: center;
+}
+.btn-right:hover,
+.btn-right:focus {
+  transform: scale(1.1);
+}
+
+.pr-pic {
+  width: 100%;
+}
+.pr-pic:hover,
+.pr-pic:focus {
+  transform: scale(1.1);
+  border: 1px solid white;
 }

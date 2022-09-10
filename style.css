@@ -43,6 +43,7 @@ body {
 h1 {
   padding: 1rem;
   font-size: 4rem;
+  white-space: nowrap;
 }
 
 .pl-right h1 {
@@ -51,6 +52,11 @@ h1 {
 
 h2 {
   padding: 1rem;
+}
+
+.pl-right h2 {
+  text-align: right;
+  letter-spacing: 0.5em;
 }
 
 h3 {
@@ -132,7 +138,11 @@ h5,
 .container {
   display: grid;
   padding: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.air {
+  margin: 2rem;
 }
 
 /* Media queries */
@@ -140,6 +150,10 @@ h5,
   .box {
     flex-direction: column;
     height: fit-content;
+  }
+
+  .air {
+    margin: 1.2rem;
   }
 
   .txt-r {
@@ -167,6 +181,10 @@ h5,
   #pr-c .container {
     grid-template-columns: 1fr;
   }
+
+  .air {
+    padding: 1rem;
+  }
 }
 
 /* Buttons */
@@ -187,4 +205,9 @@ h5,
 .pr-pic:focus {
   transform: scale(1.1);
   border: 1px solid white;
+}
+
+.links:hover,
+.links:focus {
+  text-shadow: 2px 2px var(--clr-secondary);
 }

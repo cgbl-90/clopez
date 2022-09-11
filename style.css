@@ -145,6 +145,11 @@ h5,
   margin: 2rem;
 }
 
+.air-2 {
+  margin: 4rem;
+}
+
+
 /* Media queries */
 @media (max-width: 700px) {
   .box {
@@ -154,6 +159,10 @@ h5,
 
   .air {
     margin: 1.2rem;
+  }
+
+  .air-2 {
+    margin: 2rem;
   }
 
   .txt-r {
@@ -182,7 +191,8 @@ h5,
     grid-template-columns: 1fr;
   }
 
-  .air {
+  .air,
+  .air-2 {
     padding: 1rem;
   }
 }
@@ -199,6 +209,7 @@ h5,
 
 .pr-pic {
   width: 100%;
+  position: relative;
 }
 
 .pr-pic:hover,
@@ -210,4 +221,20 @@ h5,
 .links:hover,
 .links:focus {
   text-shadow: 2px 2px var(--clr-secondary);
+}
+
+h3,
+h4 {
+  font-weight: lighter;
+  word-spacing: 1.5px;
+  line-height: 50px;
+}
+
+ul {
+  list-style: none;
+}
+
+li::before {
+  content: "\2605";
+  margin-right: 10px;
 }

@@ -228,15 +228,6 @@ h5,
   text-shadow: 2px 2px var(--clr-secondary);
 }
 
-<<<<<<< Updated upstream
-.main-bar:hover,
-.main-bar:focus {
-=======
-.main-bar {
->>>>>>> Stashed changes
-  text-shadow: none;
-}
-
 h3,
 h4 {
   font-weight: lighter;
@@ -293,8 +284,4 @@ article p {
   height: 80vh;
   display: grid;
   place-items: center;
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes

@@ -177,6 +177,12 @@ h5,
   footer {
     text-align: center;
   }
+  
+  .soon {
+  height: 80vh;
+  display: grid;
+  place-items: center;
+}
 
   .icons {
     margin-bottom: 30px;
@@ -226,6 +232,10 @@ h5,
 .links:hover,
 .links:focus {
   text-shadow: 2px 2px var(--clr-secondary);
+}
+
+.main-bar {
+  text-shadow: none;
 }
 
 h3,

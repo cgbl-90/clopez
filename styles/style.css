@@ -39,7 +39,7 @@ header li {
 section {
   min-height: 85vh;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
 }
 
 .avatar {

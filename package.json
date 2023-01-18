@@ -36,7 +36,7 @@
     ]
   },
   "description": "### About",
-  "main": "src/index.js",
+  "main": "public/index.html",
   "devDependencies": {},
   "repository": {
     "type": "git",

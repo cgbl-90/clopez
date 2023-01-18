@@ -1,4 +1,16 @@
 import projectList from "../projectList";
+import color from "../images/color.png";
+import contract from "../images/contract.png";
+import dictionary from "../images/dictionary.png";
+import explorer from "../images/explorer.png";
+import furniture from "../images/furniture.png";
+import latam from "../images/latam.png";
+import lorem from "../images/lorem.png";
+import password from "../images/password.png";
+import quiz from "../images/quiz.png";
+import test from "../images/test.png";
+import travel from "../images/travel.png";
+import weather from "../images/weather.png";
 
 function Projects(props) {
   const list = !props.props ? projectList.slice(0, 6) : projectList;
@@ -10,7 +22,7 @@ function Projects(props) {
           <a href={list[0].link} target="_blank" rel="noopener noreferrer">
             <img
               className="project-image-big"
-              src={list[0].picture}
+              src={weather}
               alt={list[0].name}
             />
           </a>
@@ -25,7 +37,7 @@ function Projects(props) {
             <a href={list[1].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small"
-                src={list[1].picture}
+                src={dictionary}
                 alt={list[1].name}
               />
             </a>
@@ -36,7 +48,7 @@ function Projects(props) {
             <a href={list[2].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small"
-                src={list[2].picture}
+                src={explorer}
                 alt={list[2].name}
               />
             </a>
@@ -46,11 +58,7 @@ function Projects(props) {
         </div>
         <div className="flex image-card">
           <a href={list[4].link} target="_blank" rel="noopener noreferrer">
-            <img
-              className="project-image-big"
-              src={list[4].picture}
-              alt={list[4].name}
-            />
+            <img className="project-image-big" src={latam} alt={list[4].name} />
           </a>
           <span>
             <h3>{list[4].name}</h3>
@@ -63,7 +71,7 @@ function Projects(props) {
             <a href={list[3].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small"
-                src={list[3].picture}
+                src={furniture}
                 alt={list[3].name}
               />
             </a>
@@ -74,7 +82,7 @@ function Projects(props) {
             <a href={list[5].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small"
-                src={list[5].picture}
+                src={travel}
                 alt={list[5].name}
               />
             </a>
@@ -91,7 +99,7 @@ function Projects(props) {
           <a href={list[0].link} target="_blank" rel="noopener noreferrer">
             <img
               className="project-image-big"
-              src={list[0].picture}
+              src={weather}
               alt={list[0].name}
             />
           </a>
@@ -106,7 +114,7 @@ function Projects(props) {
             <a href={list[1].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small"
-                src={list[1].picture}
+                src={dictionary}
                 alt={list[1].name}
               />
             </a>
@@ -117,7 +125,7 @@ function Projects(props) {
             <a href={list[2].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small"
-                src={list[2].picture}
+                src={explorer}
                 alt={list[2].name}
               />
             </a>
@@ -127,11 +135,7 @@ function Projects(props) {
         </div>
         <div className="flex image-card">
           <a href={list[4].link} target="_blank" rel="noopener noreferrer">
-            <img
-              className="project-image-big"
-              src={list[4].picture}
-              alt={list[4].name}
-            />
+            <img className="project-image-big" src={latam} alt={list[4].name} />
           </a>
           <span>
             <h3>{list[4].name}</h3>
@@ -144,7 +148,7 @@ function Projects(props) {
             <a href={list[3].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small"
-                src={list[3].picture}
+                src={furniture}
                 alt={list[3].name}
               />
             </a>
@@ -155,7 +159,7 @@ function Projects(props) {
             <a href={list[5].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small"
-                src={list[5].picture}
+                src={travel}
                 alt={list[5].name}
               />
             </a>
@@ -167,7 +171,7 @@ function Projects(props) {
           <a href={list[6].link} target="_blank" rel="noopener noreferrer">
             <img
               className="project-image-big"
-              src={list[6].picture}
+              src={contract}
               alt={list[6].name}
             />
           </a>
@@ -182,7 +186,7 @@ function Projects(props) {
             <a href={list[10].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small"
-                src={list[10].picture}
+                src={test}
                 alt={list[10].name}
               />
             </a>
@@ -193,7 +197,7 @@ function Projects(props) {
             <a href={list[8].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small project-image-small-sec"
-                src={list[8].picture}
+                src={color}
                 alt={list[8].name}
               />
             </a>
@@ -205,7 +209,7 @@ function Projects(props) {
           <a href={list[9].link} target="_blank" rel="noopener noreferrer">
             <img
               className="project-image-big"
-              src={list[9].picture}
+              src={password}
               alt={list[9].name}
             />
           </a>
@@ -220,7 +224,7 @@ function Projects(props) {
             <a href={list[11].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small"
-                src={list[11].picture}
+                src={quiz}
                 alt={list[11].name}
               />
             </a>
@@ -231,7 +235,7 @@ function Projects(props) {
             <a href={list[7].link} target="_blank" rel="noopener noreferrer">
               <img
                 className="project-image-small project-image-small-sec"
-                src={list[7].picture}
+                src={lorem}
                 alt={list[7].name}
               />
             </a>

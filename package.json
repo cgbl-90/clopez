@@ -36,7 +36,7 @@
     ]
   },
   "description": "### About",
-  "main": "public/index.html",
+  "main": "index.html",
   "devDependencies": {},
   "repository": {
     "type": "git",
@@ -52,8 +52,5 @@
   ],
   "author": "Carmen L.",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cgbl-90/clopez/issues"
-  },
-  "homepage": "https://github.com/cgbl-90/clopez/public/index.html"
+  "homepage": "https://github.com/cgbl-90/clopez/"
 }

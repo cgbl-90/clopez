@@ -1,7 +1,7 @@
-import projects from "../projects";
+import projectList from "../projectList";
 
 function Projects(props) {
-  const list = !props.props ? projects.slice(0, 6) : projects;
+  const list = !props.props ? projectList.slice(0, 6) : projectList;
 
   if (!props.props) {
     return (

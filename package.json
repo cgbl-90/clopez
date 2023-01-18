@@ -1,5 +1,5 @@
 {
-  "name": "cv-anya-design",
+  "name": "clopez",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,5 +34,26 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "### About",
+  "main": "src/index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgbl-90/clopez.git"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "js",
+    "frontend",
+    "personal",
+    "website"
+  ],
+  "author": "Carmen L.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cgbl-90/clopez/issues"
+  },
+  "homepage": "https://github.com/cgbl-90/clopez"
 }

@@ -1,0 +1,25 @@
+{
+  "name": "clopez",
+  "version": "1.0.2",
+  "description": "Frontend developer website portfolio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgbl-90/clopez.git"
+  },
+  "keywords": [
+    "frontend",
+    "development",
+    "portfolio",
+    "website"
+  ],
+  "author": "Carmen L.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cgbl-90/clopez/issues"
+  },
+  "homepage": "https://github.com/cgbl-90/clopez#readme"
+}

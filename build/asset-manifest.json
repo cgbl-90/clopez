@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/cgbl-90/clopez/static/css/main.1c774909.css",
+    "main.js": "/cgbl-90/clopez/static/js/main.1deed04a.js",
+    "static/media/weather.png": "/cgbl-90/clopez/static/media/weather.8d2c0fdb3769b8601cd3.png",
+    "static/media/contract.png": "/cgbl-90/clopez/static/media/contract.0595b848da68f14292f0.png",
+    "static/media/latam.png": "/cgbl-90/clopez/static/media/latam.c8c512d42a68de7f87e0.png",
+    "static/media/lorem.png": "/cgbl-90/clopez/static/media/lorem.e8770f54a925d7509406.png",
+    "static/media/color.png": "/cgbl-90/clopez/static/media/color.b1981bf810bf12939000.png",
+    "static/media/test.png": "/cgbl-90/clopez/static/media/test.e057931bcb49a9f49ef2.png",
+    "static/media/travel.png": "/cgbl-90/clopez/static/media/travel.747d158c393cfd229a56.png",
+    "static/media/quiz.png": "/cgbl-90/clopez/static/media/quiz.a7e6f67bcd5d9cc00cd0.png",
+    "static/media/password.png": "/cgbl-90/clopez/static/media/password.9fbd49e7b8c6539eac5a.png",
+    "static/media/explorer.png": "/cgbl-90/clopez/static/media/explorer.ca0894e014c90b95fe34.png",
+    "static/media/dictionary.png": "/cgbl-90/clopez/static/media/dictionary.3b39bddfdf9adba4d215.png",
+    "static/media/furniture.png": "/cgbl-90/clopez/static/media/furniture.86c16756dac08f9e85ed.png",
+    "static/media/avatar.jpg": "/cgbl-90/clopez/static/media/avatar.56cd01e3ed6bb0044731.jpg",
+    "index.html": "/cgbl-90/clopez/index.html",
+    "main.1c774909.css.map": "/cgbl-90/clopez/static/css/main.1c774909.css.map",
+    "main.1deed04a.js.map": "/cgbl-90/clopez/static/js/main.1deed04a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1c774909.css",
+    "static/js/main.1deed04a.js"
+  ]
+}

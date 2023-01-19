@@ -15,7 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -37,7 +39,9 @@
   },
   "description": "### About",
   "main": "index.html",
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cgbl-90/clopez.git"
@@ -52,5 +56,5 @@
   ],
   "author": "Carmen L.",
   "license": "MIT",
-  "homepage": "https://github.com/cgbl-90/clopez/"
+  "homepage": "https://github.com/cgbl-90/clopez"
 }

@@ -1,6 +1,6 @@
 {
-  "short_name": "Carmen Lopez website",
-  "name": "Carmen Lopez website",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "cv.ico",

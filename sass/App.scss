@@ -16,7 +16,6 @@ h6 {
 
 body {
   color: $base-clr;
-  margin: 0;
   padding: 0;
   max-width: 1270px;
   margin: 0 auto;
@@ -69,6 +68,20 @@ button {
     line-height: 84px;
     letter-spacing: -0.02em;
   }
+}
+
+.mPresp-btn-mob {
+  display: none;
+  h1,
+  h4 {
+    padding: 10px;
+    border: 2px solid $base-clr;
+    border-radius: 100%;
+  }
+}
+
+.mPresp-btn-web {
+  display: inline;
 }
 
 mark {
@@ -214,7 +227,7 @@ footer {
 
 .slider {
   place-items: center;
-  height: 300px;
+  min-height: 300px;
 
   article {
     transition: 1s ease;
@@ -317,4 +330,79 @@ footer {
 
 .underlined {
   text-decoration: underline;
+}
+
+// 1270px -> 5px
+// 900px -> change sizes of images/text
+// 500px -> mobile
+
+@media only screen and (max-width: 1270px) {
+  body {
+    padding: 0 5px;
+  }
+  .project-image-big {
+    width: 400px;
+    height: 250px;
+  }
+  #hero {
+    h1 {
+      font-size: 66px;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .flex {
+    flex-direction: column;
+  }
+  .flex-child {
+    max-width: 100%;
+  }
+  .flex-f-h {
+    flex-direction: row;
+  }
+  .image-card {
+    text-align: center;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  #clients h3 {
+    width: 100%;
+  }
+  header {
+    span {
+      h3 {
+        padding-left: 10px;
+      }
+    }
+  }
+
+  footer {
+    span {
+      div {
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .mPresp-btn-mob {
+    display: inline;
+  }
+
+  .mPresp-btn-web {
+    display: none;
+  }
+
+  #hero {
+    h1 {
+      font-size: 56px;
+    }
+  }
+
+  a {
+    font-size: 20px;
+  }
 }

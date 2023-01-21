@@ -338,7 +338,7 @@ footer {
 
 @media only screen and (max-width: 1270px) {
   body {
-    padding: 0 5px;
+    padding: 0 10px;
   }
   .project-image-big {
     width: 400px;
@@ -347,6 +347,7 @@ footer {
   #hero {
     h1 {
       font-size: 66px;
+      line-height: 74px;
     }
   }
 }
@@ -399,10 +400,19 @@ footer {
   #hero {
     h1 {
       font-size: 56px;
+      line-height: 64px;
     }
   }
 
   a {
     font-size: 20px;
+  }
+
+  header {
+    span {
+      h3 {
+        font-size: 20px;
+      }
+    }
   }
 }

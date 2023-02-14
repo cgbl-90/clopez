@@ -132,7 +132,7 @@ header span h3 {
   padding-left: 56px;
 }
 
-section:first {
+section:first-of-type {
   margin-top: 200px;
 }
 

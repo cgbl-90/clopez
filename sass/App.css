@@ -8,6 +8,27 @@ h6 {
   font-family: "Poppins", sans-serif;
 }
 
+h5 {
+  font-weight: 100;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+}
+div p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #8c8c8c;
+}
+
+.credits {
+  margin: 40px 0;
+}
+
 body {
   color: #434343;
   padding: 0;
@@ -45,6 +66,7 @@ button {
   color: inherit;
   border: none;
   padding: 0;
+  margin: 0;
   font: inherit;
   cursor: pointer;
 }
@@ -57,8 +79,8 @@ button {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 76px;
-  line-height: 84px;
+  font-size: 68px;
+  line-height: 74px;
   letter-spacing: -0.02em;
 }
 
@@ -83,8 +105,10 @@ mark {
 
 h2 {
   font-weight: 600;
-  font-size: 52px;
-  line-height: 78px;
+  font-size: 48px;
+  line-height: 48px;
+  margin: 0px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -94,9 +118,6 @@ h3 {
   letter-spacing: -0.01em;
 }
 
-header {
-  margin-bottom: 200px;
-}
 header h1 {
   font-weight: 600;
   font-size: 40px;
@@ -111,18 +132,28 @@ header span h3 {
   padding-left: 56px;
 }
 
+section:first {
+  margin-top: 200px;
+}
+
 section {
   margin-bottom: 150px;
 }
 
+.hideDropdown,
+.closeBurger {
+  display: none;
+}
+
 li {
   font-weight: 400;
-  font-size: 56px;
-  line-height: 70px;
+  font-size: 40px;
+  line-height: 120%;
   letter-spacing: -0.03em;
   list-style: none;
   margin: 0;
   padding: 0;
+  letter-spacing: -0.03em;
 }
 
 ul {
@@ -130,7 +161,6 @@ ul {
 }
 
 button {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -170,7 +200,6 @@ footer a {
   padding-right: 16px;
 }
 footer div {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   display: inline;
@@ -222,27 +251,6 @@ footer div {
   text-align: center;
 }
 
-.roundBtn {
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  font-style: oblique;
-  transition: 0.2s ease;
-  padding: 3px 6px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  border: 1px solid #434343;
-  border-radius: 100%;
-}
-.roundBtn:hover, .roundBtn:focus {
-  color: #b7b6b6;
-  border-color: #b7b6b6;
-}
-
 .centered {
   text-align: center;
   padding: 6px 12px;
@@ -250,21 +258,7 @@ footer div {
 }
 
 .scale-in-top {
-  -webkit-animation: scale-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: scale-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@-webkit-keyframes scale-in-top {
-  0% {
-    transform: scale(0);
-    transform-origin: 50% 0%;
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    transform-origin: 50% 0%;
-    opacity: 1;
-  }
 }
 @keyframes scale-in-top {
   0% {
@@ -344,12 +338,28 @@ footer div {
     padding-bottom: 20px;
   }
 }
+.goRound {
+  width: 56px;
+  height: 56px;
+}
+.goRound:hover, .goRound:focus {
+  color: #b7b6b6;
+  border-color: #b7b6b6;
+}
+
 @media only screen and (max-width: 560px) {
   .mPresp-btn-mob {
     display: block;
   }
+  .socialList {
+    display: block;
+    margin-bottom: 24px;
+  }
   .mPresp-btn-web {
     display: none;
+  }
+  .socialList {
+    display: block;
   }
   #hero h1 {
     font-size: 56px;
@@ -360,5 +370,9 @@ footer div {
   }
   header span h3 {
     font-size: 20px;
+  }
+  .goRound {
+    width: 40px;
+    height: 40px;
   }
 }/*# sourceMappingURL=App.css.map */

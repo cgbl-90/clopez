@@ -14,6 +14,27 @@ h6 {
   font-family: "Poppins", sans-serif;
 }
 
+h5 {
+  font-weight: 100;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  p {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #8c8c8c;
+  }
+}
+
+.credits {
+  margin: 40px 0;
+}
+
 body {
   color: $base-clr;
   padding: 0;
@@ -51,6 +72,7 @@ button {
   color: inherit;
   border: none;
   padding: 0;
+  margin: 0;
   font: inherit;
   cursor: pointer;
 }
@@ -64,8 +86,8 @@ button {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 76px;
-    line-height: 84px;
+    font-size: 68px;
+    line-height: 74px;
     letter-spacing: -0.02em;
   }
 }
@@ -91,8 +113,10 @@ mark {
 
 h2 {
   font-weight: 600;
-  font-size: 52px;
-  line-height: 78px;
+  font-size: 48px;
+  line-height: 48px;
+  margin: 0px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -103,8 +127,6 @@ h3 {
 }
 
 header {
-  margin-bottom: 200px;
-
   h1 {
     font-weight: 600;
     font-size: 40px;
@@ -122,18 +144,28 @@ header {
   }
 }
 
+section:first {
+  margin-top: 200px;
+}
+
 section {
   margin-bottom: 150px;
 }
 
+.hideDropdown,
+.closeBurger {
+  display: none;
+}
+
 li {
   font-weight: 400;
-  font-size: 56px;
-  line-height: 70px;
+  font-size: 40px;
+  line-height: 120%;
   letter-spacing: -0.03em;
   list-style: none;
   margin: 0;
   padding: 0;
+  letter-spacing: -0.03em;
 }
 
 ul {
@@ -240,25 +272,6 @@ footer {
       line-height: 30px;
       text-align: center;
     }
-  }
-}
-
-.roundBtn {
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  font-style: oblique;
-  transition: 0.2s ease;
-  padding: 3px 6px;
-  width: fit-content;
-  height: fit-content;
-  border: 1px solid $base-clr;
-  border-radius: 100%;
-
-  &:hover,
-  &:focus {
-    color: #b7b6b6;
-    border-color: #b7b6b6;
   }
 }
 
@@ -388,13 +401,32 @@ footer {
   }
 }
 
+.goRound {
+  width: 56px;
+  height: 56px;
+  &:hover,
+  &:focus {
+    color: #b7b6b6;
+    border-color: #b7b6b6;
+  }
+}
+
 @media only screen and (max-width: 560px) {
   .mPresp-btn-mob {
     display: block;
   }
 
+  .socialList {
+    display: block;
+    margin-bottom: 24px;
+  }
+
   .mPresp-btn-web {
     display: none;
+  }
+
+  .socialList {
+    display: block;
   }
 
   #hero {
@@ -414,5 +446,10 @@ footer {
         font-size: 20px;
       }
     }
+  }
+
+  .goRound {
+    width: 40px;
+    height: 40px;
   }
 }

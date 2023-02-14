@@ -7,22 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Frontend & Support Engineer portfolio website" />
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  <!-- Sass CSS-->
   <link rel="stylesheet" href="sass/App.css">
   <title>Carmen López — Frontend & Support Engineer</title>
 </head>
 
 <body>
   <header class="flex flex-f-h">
-    <button class="mainPage mPresp-btn-web">
+    <button class="mainPage">
       <h1>CARMEN LOPEZ</h1>
     </button>
-    <button class="mainPage mPresp-btn-mob">
-      <h1>CL</h1>
-    </button>
-    <span>
+    <span class="mPresp-btn-web">
       <button class="flashy projectPage">
         <h3>Projects</h3>
       </button>
@@ -30,7 +29,16 @@
         <h3>About</h3>
       </button>
     </span>
+    <span class="mPresp-btn-mob">
+      <button class="openBurger"><img class="goRound" src="images/burger.svg" alt="open menu" /></button>
+      <button class="closeBurger"><img class="goRound" src="images/close.svg" alt="close menu" /></button>
+    </span>
   </header>
+  <span class="hideDropdown">
+    <div class="flashy mainPage">Home</div>
+    <div class="flashy projectPage">Projects</div>
+    <div class="flashy aboutPage">About</div>
+  </span>
   <main id="mainPage" class="scale-in-top enabled">
     <section id="hero">
       <h1>
@@ -270,7 +278,7 @@
     <section>
       <h2>What people say</h2>
       <div class="slider flex">
-        <button class="roundBtn goPrev">←</button>
+        <button class="goPrev"><img class="goRound" src="images/back.svg" alt="prev" /></button>
         <article id="review1" class="disabled">
           <a href="https://www.linkedin.com/in/cgbl/details/recommendations/" target="_blank" rel="noopener noreferrer">
             <h3 class="pointer flashy">
@@ -310,7 +318,7 @@
           </a>
           <h4>Ashwin Nandapurkar, colleague at Remo</h4>
         </article>
-        <button class="roundBtn goNext">→</button>
+        <button class="goPrev"><img class="goRound" src="images/next.svg" alt="next" /></button>
       </div>
     </section>
   </main>
@@ -327,18 +335,24 @@
       </div>
       <div>
         <h5>Social:</h5>
-        <a href="https://t.me/cg_bl" target="_blank" rel="noopener noreferrer">
+        <a class="socialList" href="https://t.me/cg_bl" target="_blank" rel="noopener noreferrer">
           Telegram
         </a>
-        <a href="https://github.com/cgbl-90" target="_blank" rel="noopener noreferrer">
+        <a class="socialList" href="https://github.com/cgbl-90" target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
-        <a href="https://www.linkedin.com/in/cgbl/" target="_blank" rel="noopener noreferrer">
+        <a class="socialList" href="https://www.linkedin.com/in/cgbl/" target="_blank" rel="noopener noreferrer">
           LinkedIn
         </a>
       </div>
     </span>
   </footer>
+  <div class="credits">
+    <p>
+      @design by Anna Sushok, 2023
+    </p>
+  </div>
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 

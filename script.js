@@ -115,7 +115,7 @@ function showHideContent(e) {
       "beforebegin",
       `<li class="remove">Running Remote</li>`
     );
-    moreLessClients.innerHTML = `<button class="roundBtn centered">↑</button>`;
+    moreLessClients.innerHTML = `<button class="centered">↑</button>`;
     showHideClients = true;
   } else {
     let Lis = document.querySelectorAll("li");

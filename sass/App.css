@@ -28,7 +28,7 @@ div p {
 .credits {
   margin: 40px 0;
 }
- 
+
 body {
   color: #434343;
   padding: 0;
@@ -51,6 +51,12 @@ header,
 footer {
   height: 150px;
   place-items: center;
+}
+
+.mobMenuItem {
+  margin: 32px 0px;
+  text-align: left;
+  display: block;
 }
 
 a,
@@ -134,11 +140,6 @@ header span h3 {
 
 section {
   margin: 150px 0;
-}
-
-.hideDropdown,
-.closeBurger {
-  display: none;
 }
 
 li {
@@ -344,6 +345,9 @@ footer div {
 }
 
 @media only screen and (max-width: 560px) {
+  .mobMenuItem {
+    display: block;
+  }
   .mPresp-btn-mob {
     display: block;
   }
@@ -371,4 +375,8 @@ footer div {
     width: 40px;
     height: 40px;
   }
+}
+.hideDropdown,
+.closeBurger {
+  display: none;
 }/*# sourceMappingURL=App.css.map */

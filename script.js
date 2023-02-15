@@ -7,6 +7,9 @@ let moreLessClients = document.getElementById("moreLessClients");
 moreLessClients.addEventListener("click", showHideContent);
 let showHideClients = false;
 let revPosition = 0;
+let burgerMenu = document.getElementsByClassName("hideDropdown");
+let burgerOpen = document.getElementsByClassName("openBurger");
+let burgerClose = document.getElementsByClassName("closeBurger");
 
 btns.forEach((btn) => {
   btn.addEventListener("click", function (e) {
@@ -90,6 +93,20 @@ btns.forEach((btn) => {
         }
       });
     }
+
+    // BURGER MENU
+
+    if (styles.contains("openBurger")) {
+      burgerMenu[0].style.display = "block";
+      burgerClose[0].style.display = "block";
+      burgerOpen[0].style.display = "none";
+    }
+
+    if (styles.contains("closeBurger")) {
+      burgerMenu[0].style.display = "none";
+      burgerClose[0].style.display = "none";
+      burgerOpen[0].style.display = "block";
+    }
   });
 });
 
@@ -125,6 +142,11 @@ function showHideContent(e) {
     moreLessClients.innerHTML = `<li>& More </li>`;
     showHideClients = false;
   }
-
-  // REVIEWS BACK/FORTH
 }
+
+// MEDIA QUERY
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 560) {
+    burgerMenu[0].style.display = "none";
+  }
+});

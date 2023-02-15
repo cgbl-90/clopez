@@ -59,6 +59,12 @@ footer {
   place-items: center;
 }
 
+.mobMenuItem {
+  margin: 32px 0px;
+  text-align: left;
+  display: block;
+}
+
 a,
 a:focus,
 a:hover,
@@ -146,11 +152,6 @@ header {
 
 section {
   margin: 150px 0;
-}
-
-.hideDropdown,
-.closeBurger {
-  display: none;
 }
 
 li {
@@ -341,10 +342,6 @@ footer {
   text-decoration: underline;
 }
 
-// 1270px -> 5px
-// 900px -> change sizes of images/text
-// 500px -> mobile
-
 @media only screen and (max-width: 1270px) {
   body {
     padding: 0 10px;
@@ -408,6 +405,10 @@ footer {
 }
 
 @media only screen and (max-width: 560px) {
+  .mobMenuItem {
+    display: block;
+  }
+
   .mPresp-btn-mob {
     display: block;
   }
@@ -448,4 +449,9 @@ footer {
     width: 40px;
     height: 40px;
   }
+}
+
+.hideDropdown,
+.closeBurger {
+  display: none;
 }

@@ -148,5 +148,7 @@ function showHideContent(e) {
 window.addEventListener("resize", () => {
   if (window.innerWidth > 560) {
     burgerMenu[0].style.display = "none";
+    burgerClose[0].style.display = "none";
+    burgerOpen[0].style.display = "block";
   }
 });

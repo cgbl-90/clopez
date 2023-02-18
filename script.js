@@ -24,6 +24,7 @@ btns.forEach((btn) => {
       aboutPage.classList.remove("enabled");
       projectPage.classList.add("disabled");
       aboutPage.classList.add("disabled");
+      hideBtns();
     }
     if (styles.contains("projectPage")) {
       // show
@@ -34,6 +35,7 @@ btns.forEach((btn) => {
       mainPage.classList.add("disabled");
       aboutPage.classList.remove("enabled");
       aboutPage.classList.add("disabled");
+      hideBtns();
       //
       for (let i = 0; i < btns.length; i++)
         btns[i].classList.remove("underlined");
@@ -48,6 +50,7 @@ btns.forEach((btn) => {
       mainPage.classList.add("disabled");
       projectPage.classList.remove("enabled");
       projectPage.classList.add("disabled");
+      hideBtns();
       //
       for (let i = 0; i < btns.length; i++)
         btns[i].classList.remove("underlined");
@@ -102,7 +105,9 @@ btns.forEach((btn) => {
       burgerOpen[0].style.display = "none";
     }
 
-    if (styles.contains("closeBurger")) {
+    if (styles.contains("closeBurger")) hideBtns();
+
+    function hideBtns() {
       burgerMenu[0].style.display = "none";
       burgerClose[0].style.display = "none";
       burgerOpen[0].style.display = "block";

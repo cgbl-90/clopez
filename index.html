@@ -35,9 +35,9 @@
     </span>
   </header>
   <span class="hideDropdown">
-    <button class="flashy mainPage mobMenuItem">Home</button>
-    <button class="flashy projectPage mobMenuItem">Projects</button>
-    <button class="flashy aboutPage mobMenuItem">About</button>
+    <button class="mainPage mobMenuItem">Home</button>
+    <button class="projectPage mobMenuItem">Projects</button>
+    <button class="aboutPage mobMenuItem">About</button>
   </span>
   <main id="mainPage" class="scale-in-top enabled">
     <section id="hero">
@@ -247,7 +247,7 @@
   <main id="aboutPage" class="scale-in-top disabled">
     <section>
       <h2>About me</h2>
-      <div class="flex">
+      <div id="about2" class="flex">
         <h3 class="flex-child">
           I'm enthusiastic frontend developer focused on creating
           customer-centric, responsive websites and mobile apps. Focused on
@@ -263,7 +263,7 @@
         </span>
       </div>
     </section>
-    <section class="flex">
+    <section id="about3" class="flex">
       <h2 class="flex-child">I can help you</h2>
       <h3 class="flex-child">
         ‣ create a responsive and complex website for your business <br />‣
@@ -275,9 +275,13 @@
     </section>
     <section>
       <h2>What people say</h2>
+      <span class="btnMob">
+        <button class="goPrev"><img class="goRound" src="images/back.svg" alt="next" /></button>
+        <button class="goNext"><img class="goRound" src="images/next.svg" alt="next" /></button>
+      </span>
       <div class="slider flex">
-        <button class="goPrev"><img class="goRound" src="images/back.svg" alt="prev" /></button>
-        <article id="review1" class="disabled">
+        <button class="goPrev btnWeb"><img class="goRound" src="images/back.svg" alt="prev" /></button>
+        <article class="disabled reviews">
           <h3>
             I worked with Carmen at Joom and found her to be an incredibly professional and pleasant person to work
             with. Carmen is
@@ -285,7 +289,7 @@
           </h3>
           <h4>Anna Kon, colleague at Joom</h4>
         </article>
-        <article id="review2" class="disabled">
+        <article class="disabled reviews">
           <h3>
             I worked with Carmen at Remote.com, she was by far an outstanding member of her team, as a CX manager she
             helped me with clients and employees queries as well as supporting my team by getting accurate data to
@@ -293,14 +297,14 @@
           </h3>
           <h4>Vanesa Koopman Esposito, colleague at Remote</h4>
         </article>
-        <article id="review3" class="enabled">
+        <article class="enabled reviews">
           <h3>
             Really loving Remo, it's brilliant for event networking. Shout out to Carmen who has been so brilliantly
             helpful too!
           </h3>
           <h4>Rachel Kerr, customer at Remo</h4>
         </article>
-        <article id="review4" class="disabled">
+        <article class="disabled reviews">
           <h3>
             Working with Carmen was a great pleasure. She is one of those people who would ask you a lot of questions
             around the goals and objectives of a certain project in the beginning before jumping onboard. When she
@@ -308,7 +312,7 @@
           </h3>
           <h4>Ashwin Nandapurkar, colleague at Remo</h4>
         </article>
-        <button class="goPrev"><img class="goRound" src="images/next.svg" alt="next" /></button>
+        <button class="goNext btnWeb"><img class="goRound" src="images/next.svg" alt="next" /></button>
       </div>
     </section>
   </main>

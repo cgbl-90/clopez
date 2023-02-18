@@ -31,6 +31,7 @@ div {
   }
 }
 
+// Designer credits
 .credits {
   margin: 40px 0;
 }
@@ -256,7 +257,7 @@ footer {
 
 .slider {
   place-items: center;
-  min-height: 300px;
+  min-height: 500px;
 
   article {
     transition: 1s ease;
@@ -281,39 +282,6 @@ footer {
 .scale-in-top {
   -webkit-animation: scale-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: scale-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@-webkit-keyframes scale-in-top {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    -webkit-transform-origin: 50% 0%;
-    transform-origin: 50% 0%;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transform-origin: 50% 0%;
-    transform-origin: 50% 0%;
-    opacity: 1;
-  }
-}
-@keyframes scale-in-top {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    -webkit-transform-origin: 50% 0%;
-    transform-origin: 50% 0%;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transform-origin: 50% 0%;
-    transform-origin: 50% 0%;
-    opacity: 1;
-  }
 }
 
 .grid {
@@ -368,9 +336,6 @@ footer {
   .flex-f-h {
     flex-direction: row;
   }
-  .image-card {
-    text-align: center;
-  }
   .grid {
     grid-template-columns: 1fr;
   }
@@ -399,12 +364,31 @@ footer {
   height: 56px;
   &:hover,
   &:focus {
-    color: #b7b6b6;
-    border-color: #b7b6b6;
+    border-radius: 99%;
+    box-shadow: #c6d3f3 0px 0.2px 12px;
   }
 }
 
 @media only screen and (max-width: 560px) {
+  h3,
+  h5,
+  ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul {
+    padding-top: 10px;
+  }
+
+  li {
+    font-size: 28px;
+    line-height: 42px;
+    letter-spacing: -0.01em;
+  }
+
   .mobMenuItem {
     display: block;
   }
@@ -428,8 +412,34 @@ footer {
 
   #hero {
     h1 {
-      font-size: 56px;
-      line-height: 64px;
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  #about {
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  #clients {
+    div {
+      h3 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  .image-card {
+    a {
+      img {
+        width: 400px;
+        height: auto;
+        margin: 0 auto;
+      }
     }
   }
 
@@ -454,4 +464,38 @@ footer {
 .hideDropdown,
 .closeBurger {
   display: none;
+}
+
+// Animation
+@-webkit-keyframes scale-in-top {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-top {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
 }

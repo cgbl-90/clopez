@@ -234,7 +234,7 @@ footer div {
 
 .slider {
   place-items: center;
-  min-height: 300px;
+  min-height: 500px;
 }
 .slider article {
   transition: 1s ease;
@@ -257,18 +257,7 @@ footer div {
 .scale-in-top {
   animation: scale-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
-@keyframes scale-in-top {
-  0% {
-    transform: scale(0);
-    transform-origin: 50% 0%;
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    transform-origin: 50% 0%;
-    opacity: 1;
-  }
-}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -319,9 +308,6 @@ footer div {
   .flex-f-h {
     flex-direction: row;
   }
-  .image-card {
-    text-align: center;
-  }
   .grid {
     grid-template-columns: 1fr;
   }
@@ -340,11 +326,29 @@ footer div {
   height: 56px;
 }
 .goRound:hover, .goRound:focus {
-  color: #b7b6b6;
-  border-color: #b7b6b6;
+  border-radius: 99%;
+  box-shadow: #c6d3f3 0px 0.2px 12px;
 }
 
 @media only screen and (max-width: 560px) {
+  h3,
+  h5,
+  ul {
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+    -webkit-margin-after: 0;
+            margin-block-end: 0;
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    padding-top: 10px;
+  }
+  li {
+    font-size: 28px;
+    line-height: 42px;
+    letter-spacing: -0.01em;
+  }
   .mobMenuItem {
     display: block;
   }
@@ -362,8 +366,21 @@ footer div {
     display: block;
   }
   #hero h1 {
-    font-size: 56px;
-    line-height: 64px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+  #about h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  #clients div h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .image-card a img {
+    width: 400px;
+    height: auto;
+    margin: 0 auto;
   }
   a {
     font-size: 20px;
@@ -379,4 +396,16 @@ footer div {
 .hideDropdown,
 .closeBurger {
   display: none;
+}
+@keyframes scale-in-top {
+  0% {
+    transform: scale(0);
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
 }/*# sourceMappingURL=App.css.map */

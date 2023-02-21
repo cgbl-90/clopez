@@ -220,7 +220,7 @@ footer div {
   transition: 0.3s ease;
 }
 .image-card img:hover, .image-card img:focus {
-  filter: blur(1px);
+  filter: brightness(0.8);
   opacity: 0.8;
 }
 .image-card h5 {
@@ -310,6 +310,10 @@ footer div {
 }
 
 @media only screen and (max-width: 900px) {
+  .image-card {
+    justify-content: none;
+    align-items: none;
+  }
   .flex {
     flex-direction: column;
   }
@@ -353,6 +357,10 @@ footer div {
 }
 
 @media only screen and (max-width: 560px) {
+  h2 {
+    font-size: 28px;
+    line-height: 28px;
+  }
   h3,
   h5,
   ul {
@@ -406,10 +414,21 @@ footer div {
     font-size: 20px;
     line-height: 28px;
   }
+  .slider {
+    min-height: 300px;
+  }
+  .image-card {
+    display: block;
+  }
   .image-card a img {
     width: 400px;
     height: auto;
     margin: 0 auto;
+  }
+  .image-card span {
+    margin: 0;
+    padding: 0;
+    text-align: left;
   }
   a {
     font-size: 20px;
@@ -420,6 +439,15 @@ footer div {
   .goRound {
     width: 40px;
     height: 40px;
+  }
+  #about2 .flex-child img {
+    width: 80%;
+  }
+  .hideDropdown {
+    height: 100vh;
+  }
+  .image-card span h5 {
+    margin-bottom: 40px;
   }
 }
 .hideDropdown,
@@ -438,5 +466,3 @@ footer div {
     opacity: 1;
   }
 }
-
-/*# sourceMappingURL=App.css.map */

@@ -12,10 +12,11 @@ h5 {
   font-weight: 100;
 }
 
-div {
+/* div {
   display: flex;
   justify-content: center;
-}
+} */
+
 div p {
   font-family: "Poppins";
   font-style: normal;
@@ -96,6 +97,7 @@ button {
 .mPresp-btn-mob {
   display: none;
 }
+
 .mPresp-btn-mob h1,
 .mPresp-btn-mob h4 {
   padding: 10px;
@@ -133,6 +135,7 @@ header h1 {
   line-height: 46px;
   letter-spacing: -0.01em;
 }
+
 header span h3 {
   font-weight: 500;
   font-size: 30px;
@@ -158,6 +161,9 @@ li {
 
 ul {
   text-align: left;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 button {
@@ -177,7 +183,9 @@ img {
 .flashy {
   transition: 0.3s ease;
 }
-.flashy:focus, .flashy:hover {
+
+.flashy:focus,
+.flashy:hover {
   color: #366af3;
 }
 
@@ -186,6 +194,7 @@ footer h4 {
   font-size: 32px;
   line-height: 48px;
 }
+
 footer h5 {
   font-weight: 500;
   font-size: 14px;
@@ -193,12 +202,14 @@ footer h5 {
   margin: 0;
   padding: 0;
 }
+
 footer a {
   font-weight: 500;
   font-size: 20px;
   line-height: 20px;
   padding-right: 16px;
 }
+
 footer div {
   width: -moz-fit-content;
   width: fit-content;
@@ -216,17 +227,21 @@ footer div {
   gap: 10px;
   margin-bottom: 40px;
 }
+
 .image-card img {
   transition: 0.3s ease;
 }
-.image-card img:hover, .image-card img:focus {
-  filter: brightness(0.8);
-  opacity: 0.8;
+
+.image-card img:hover,
+.image-card img:focus {
+  filter: opacity(0.8);
 }
+
 .image-card h5 {
   margin: 0;
   padding: 0;
 }
+
 .image-card h3 {
   font-weight: 600;
   font-size: 24px;
@@ -239,11 +254,13 @@ footer div {
   place-items: center;
   min-height: 500px;
 }
+
 .slider article {
   transition: 1s ease;
   max-width: 800px;
   text-align: center;
 }
+
 .slider article h5 {
   font-weight: 400;
   font-size: 24px;
@@ -255,10 +272,6 @@ footer div {
   text-align: center;
   padding: 6px 12px;
   font-size: 14px;
-}
-
-.scale-in-top {
-  animation: scale-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .grid {
@@ -292,15 +305,18 @@ footer div {
   body {
     padding: 0 10px;
   }
+
   .project-image-big {
     width: 400px;
     height: 250px;
   }
+
   #hero h1 {
     font-size: 66px;
     line-height: 74px;
   }
 }
+
 .btnWeb {
   display: inline;
 }
@@ -314,44 +330,57 @@ footer div {
     justify-content: none;
     align-items: none;
   }
+
   .flex {
     flex-direction: column;
   }
+
   .btnMob {
     display: block;
     text-align: center;
-    margin: 70px 0 20px;
+    margin: 10px 0 20px;
   }
+
   .btnMob button {
     padding: 5px;
   }
+
   .btnWeb {
     display: none;
   }
+
   .flex-child {
     max-width: 100%;
   }
+
   .flex-f-h {
     flex-direction: row;
   }
+
   .grid {
     grid-template-columns: 1fr;
   }
+
   #clients h3 {
     width: 100%;
   }
+
   header span h3 {
     padding-left: 10px;
   }
+
   footer span div {
     padding-bottom: 20px;
   }
 }
+
 .goRound {
   width: 56px;
   height: 56px;
 }
-.goRound:hover, .goRound:focus {
+
+.goRound:hover,
+.goRound:focus {
   border-radius: 99%;
   box-shadow: #c6d3f3 0px 0.2px 12px;
 }
@@ -361,48 +390,55 @@ footer div {
     font-size: 28px;
     line-height: 28px;
   }
+
   h3,
   h5,
   ul {
     -webkit-margin-before: 0;
-            margin-block-start: 0;
+    margin-block-start: 0;
     -webkit-margin-after: 0;
-            margin-block-end: 0;
+    margin-block-end: 0;
     padding: 0;
     margin: 0;
   }
+
   ul {
     padding-top: 10px;
   }
+
   li {
     font-size: 28px;
     line-height: 42px;
     letter-spacing: -0.01em;
   }
+
   .mobMenuItem {
     display: block;
   }
+
   .mPresp-btn-mob {
     display: block;
   }
+
   .socialList {
     display: block;
     margin-bottom: 24px;
   }
+
   .mPresp-btn-web {
     display: none;
   }
-  .socialList {
-    display: block;
-  }
+
   #hero h1 {
     font-size: 32px;
     line-height: 40px;
   }
+
   header h1 {
     font-size: 28px;
     line-height: 32px;
   }
+
   #about h3,
   #about2 h3,
   #about3 h3,
@@ -410,59 +446,59 @@ footer div {
     font-size: 20px;
     line-height: 28px;
   }
+
   #clients div h3 {
     font-size: 20px;
     line-height: 28px;
   }
+
   .slider {
-    min-height: 300px;
+    min-height: fit-content;
   }
+
   .image-card {
     display: block;
   }
+
   .image-card a img {
     width: 400px;
     height: auto;
     margin: 0 auto;
   }
+
   .image-card span {
     margin: 0;
     padding: 0;
     text-align: left;
   }
+
   a {
     font-size: 20px;
   }
+
   header span h3 {
     font-size: 20px;
   }
+
   .goRound {
     width: 40px;
     height: 40px;
   }
+
   #about2 .flex-child img {
     width: 80%;
   }
+
   .hideDropdown {
     height: 100vh;
   }
+
   .image-card span h5 {
     margin-bottom: 40px;
   }
 }
+
 .hideDropdown,
 .closeBurger {
   display: none;
-}
-@keyframes scale-in-top {
-  0% {
-    transform: scale(0);
-    transform-origin: 50% 0%;
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    transform-origin: 50% 0%;
-    opacity: 1;
-  }
 }

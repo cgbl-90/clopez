@@ -5,7 +5,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Cutive Mono", monospace;
 }
 
 body {
@@ -57,7 +57,7 @@ section {
 }
 
 .image-card {
-  flex: 0 0 25%;
+  flex: 0 0 50%;
   /* Show 4 items at a time */
   box-sizing: border-box;
   padding: 0 1rem;
@@ -105,5 +105,18 @@ footer {
 }
 
 .credits {
+  padding: 50px;
   text-align: center;
+}
+
+.icon {
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 40px;
+  height: auto;
+  display: block;
+  background-color: transparent;
 }

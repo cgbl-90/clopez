@@ -13,338 +13,164 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
   <!-- Sass CSS-->
   <link rel="stylesheet" href="sass/App.css">
-  <title>Carmen López — Frontend & Support Engineer</title>
+  <title>Carmen López — CV</title>
 </head>
 
 <body>
-  <header class="flex flex-f-h">
-    <button class="mainPage">
-      <h1>CARMEN LOPEZ</h1>
+
+  <header class="flex-r">
+    <button>
+      <h1>👋</h1>
     </button>
-    <span class="mPresp-btn-web">
-      <button class="flashy projectPage">
-        <h3>Projects</h3>
-      </button>
-      <button class="flashy aboutPage">
-        <h3>About</h3>
-      </button>
-    </span>
-    <span class="mPresp-btn-mob">
-      <button class="openBurger"><img class="goRound" src="images/burger.svg" alt="open menu" /></button>
-      <button class="closeBurger"><img class="goRound" src="images/close.svg" alt="close menu" /></button>
-    </span>
+    <button>
+      <h3>Blog</h3>
+    </button>
   </header>
-  <span class="hideDropdown">
-    <button class="mainPage mobMenuItem">Home</button>
-    <button class="projectPage mobMenuItem">Projects</button>
-    <button class="aboutPage mobMenuItem">About</button>
-  </span>
-  <main id="mainPage" class="enabled">
-    <section id="hero">
-      <h1>
-        I'm a frontend developer, <br />
-        focused on creating <br />
-        <mark>customer-centric</mark> websites <br />& mobile applications
-      </h1>
-    </section>
-    <section id="featured">
-      <h2>Projects</h2>
-      <div class="flex image-card">
-        <a href="https://github.com/cgbl-90/react-weather-app" target="_blank" rel="noopener noreferrer">
-          <img class="project-image-big" src="images/weather.png" alt="Weather Forecast App" />
-        </a>
-        <span>
+
+  <section id="hero">
+    <h3>
+      Carmen López is a support engineer, frontend developer and customer experience enthusiast
+    </h3>
+    <h5>currently, I work as Support Engineer at Chromatic</h5>
+  </section>
+
+  <section id="bio">
+    <h2>BIO</h2>
+    <h3>
+      I've been working in the tech industry for >10 years mostly in customer-facing roles.
+      As frontend developer, I'm focused on creating customer-centric experiences.
+      Focused on React & Visual Testing. <br /> <br />
+      Previously, I worked as customer support agent, customer support lead, customer success manager &
+      regional/country manager in e-Commerce, SaaS & Gaming companies. <br /> <br />
+      I've had the pleasure of working with some great clients along the way. These are some of them: <strong>TED talks,
+        Aetna, NSU Florida, NASA, Harvard, Typeform and others</strong>
+    </h3>
+  </section>
+
+  <section>
+    <h2>PET PROJECTS</h2>
+    <div id="carousel-container">
+      <button id="prev">
+        <img src="images/back.svg" alt="Previous" />
+      </button>
+      <div id="carousel" class="carousel">
+        <div class="image-card">
+          <a href="https://github.com/cgbl-90/react-weather-app" target="_blank" rel="noopener noreferrer">
+            <img src="images/weather.png" alt="Weather Forecast App" />
+          </a>
           <h3>Weather Forecast App</h3>
           <h5>Stack: React JS, API, Axios, CSS</h5>
-        </span>
-      </div>
-      <div class="grid image-card">
-        <span class="mPresp-btn-web"></span>
-        <span>
+        </div>
+        <div class="image-card">
           <a href="https://github.com/cgbl-90/dictionary-project" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small" src="images/dictionary.png" alt="Dictionary" />
+            <img src="images/dictionary.png" alt="Dictionary" />
           </a>
           <h3>Dictionary</h3>
           <h5>Stack: React JS, API, Axios, CSS</h5>
-        </span>
-        <span>
+        </div>
+        <div class="image-card">
           <a href="https://github.com/cgbl-90/ether-react-balance" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small" src="images/explorer.png" alt="Ethereum Balance Explorer" />
+            <img src="images/explorer.png" alt="Ethereum Balance Explorer" />
           </a>
           <h3>Ethereum Balance Explorer</h3>
           <h5>Stack: React JS, Ether JS, Sass</h5>
-        </span>
-      </div>
-      <div class="flex image-card">
-        <a href="https://github.com/cgbl-90/axios-countries-api" target="_blank" rel="noopener noreferrer">
-          <img class="project-image-big" src="images/latam.png" alt="Latam countries data" />
-        </a>
-        <span>
+        </div>
+        <div class="image-card">
+          <a href="https://github.com/cgbl-90/axios-countries-api" target="_blank" rel="noopener noreferrer">
+            <img src="images/latam.png" alt="Latam countries data" />
+          </a>
           <h3>Latam countries data</h3>
           <h5>Stack: React JS, Axios, API, CSS</h5>
-        </span>
-      </div>
-      <div class="grid image-card">
-        <span class="mPresp-btn-web"></span>
-        <span>
+        </div>
+        <div class="image-card">
           <a href="https://github.com/cgbl-90/sass-furniutr" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small" src="images/furniture.png" alt="Furniture e-commerce website" />
+            <img src="images/furniture.png" alt="Furniture e-commerce website" />
           </a>
           <h3>Furniture e-commerce website</h3>
           <h5>Stack: Sass CSS, HTML</h5>
-        </span>
-        <span>
+        </div>
+        <div class="image-card">
           <a href="https://github.com/cgbl-90/sass-thousand-sunny" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small" src="images/travel.png" alt="Travel Agency website" />
+            <img src="images/travel.png" alt="Travel Agency website" />
           </a>
           <h3>Travel Agency website</h3>
           <h5>Stack: Sass CSS, HTML</h5>
-        </span>
-      </div>
-    </section>
-    <section id="clients">
-      <h2>Clients</h2>
-      <div class="flex">
-        <h3 class="flex-child">
-          I've had the pleasure of working with some great clients along the
-          way. These are some of them!
-        </h3>
-        <ul class="flex-child">
-          <li>NASA</li>
-          <li>Ted talks</li>
-          <li>Aetna</li>
-          <li>NSU Florida</li>
-          <span id="moreLessClients" class="flashy pointer">
-            <li>& More </li>
-          </span>
-        </ul>
-      </div>
-    </section>
-    <section id="about" class="flex">
-      <h2 class="flex-child">About me</h2>
-      <h3 class="flex-child">
-        I'm enthusiastic frontend developer focused on creating
-        customer-centric, responsive websites and mobile apps. Focused on
-        React & Sass. <br /> <br />
-        Previously, I worked as customer support agent, customer support lead,
-        customer success manager & regional/country manager in e-Commerce,
-        SaaS & Gaming companies.
-      </h3>
-    </section>
-  </main>
-  <main id="projectPage" class="disabled">
-    <section>
-      <h2>Projects</h2>
-      <div class="flex image-card">
-        <a href="https://github.com/cgbl-90/react-weather-app" target="_blank" rel="noopener noreferrer">
-          <img class="project-image-big" src="images/weather.png" alt="Weather Forecast App" />
-        </a>
-        <span>
-          <h3>Weather Forecast App</h3>
-          <h5>Stack: React JS, API, Axios, CSS</h5>
-        </span>
-      </div>
-      <div class="grid image-card">
-        <span class="mPresp-btn-web"></span>
-        <span>
-          <a href="https://github.com/cgbl-90/dictionary-project" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small" src="images/dictionary.png" alt="Dictionary" />
+        </div>
+        <div class="image-card">
+          <a href="https://github.com/cgbl-90/ether-react-smart-contract" target="_blank" rel="noopener noreferrer">
+            <img src="images/contract.png" alt="Ethereum smart contract reader" />
           </a>
-          <h3>Dictionary</h3>
-          <h5>Stack: React JS, API, Axios, CSS</h5>
-        </span>
-        <span>
-          <a href="https://github.com/cgbl-90/ether-react-balance" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small" src="images/explorer.png" alt="Ethereum Balance Explorer" />
-          </a>
-          <h3>Ethereum Balance Explorer</h3>
-          <h5>Stack: React JS, Ether JS, Sass</h5>
-        </span>
-      </div>
-      <div class="flex image-card">
-        <a href="https://github.com/cgbl-90/axios-countries-api" target="_blank" rel="noopener noreferrer">
-          <img class="project-image-big" src="images/latam.png" alt="Latam countries data" />
-        </a>
-        <span>
-          <h3>Latam countries data</h3>
-          <h5>Stack: React JS, Axios, API, CSS</h5>
-        </span>
-      </div>
-      <div class="grid image-card">
-        <span class="mPresp-btn-web"></span>
-        <span>
-          <a href="https://github.com/cgbl-90/sass-furniutr" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small" src="images/furniture.png" alt="Furniture e-commerce website" />
-          </a>
-          <h3>Furniture e-commerce website</h3>
-          <h5>Stack: Sass CSS, HTML</h5>
-        </span>
-        <span>
-          <a href="https://github.com/cgbl-90/sass-thousand-sunny" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small" src="images/travel.png" alt="Travel Agency website" />
-          </a>
-          <h3>Travel Agency website</h3>
-          <h5>Stack: Sass CSS, HTML</h5>
-        </span>
-      </div>
-      <div class="flex image-card">
-        <a href="https://github.com/cgbl-90/ether-react-smart-contract" target="_blank" rel="noopener noreferrer">
-          <img class="project-image-big" src="images/contract.png" alt="Ethereum smart contract reader" />
-        </a>
-        <span>
           <h3>Ethereum smart contract reader</h3>
           <h5>Stack: Stack: React JS, Ether JS, Infura API, Sass</h5>
-        </span>
-      </div>
-      <div class="grid image-card">
-        <span class="mPresp-btn-web"></span>
-        <span>
+        </div>
+        <div class="image-card">
           <a href="https://github.com/cgbl-90/react-quiz-app" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small" src="images/quiz.png" alt="Quiz app" />
+            <img src="images/quiz.png" alt="Quiz app" />
           </a>
           <h3>Quiz app</h3>
           <h5>Stack: React JS, CSS</h5>
-        </span>
-        <span>
+        </div>
+        <div class="image-card">
           <a href="https://github.com/cgbl-90/react-color-generator" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small project-image-small-sec" src="images/color.png"
-              alt="Color palette generator" />
+            <img src="images/color.png" alt="Color palette generator" />
           </a>
           <h3>Color palette generator</h3>
           <h5>Stack: React JS, Sass, Values.js</h5>
-        </span>
-      </div>
-      <div class="flex image-card">
-        <a href="https://github.com/cgbl-90/pwd-generator" target="_blank" rel="noopener noreferrer">
-          <img class="project-image-big" src="images/password.png" alt="Password generator" />
-        </a>
-        <span>
+        </div>
+        <div class="image-card">
+          <a href="https://github.com/cgbl-90/pwd-generator" target="_blank" rel="noopener noreferrer">
+            <img src="images/password.png" alt="Password generator" />
+          </a>
           <h3>Password generator</h3>
           <h5>Stack: Javascript, HTML/CSS</h5>
-        </span>
-      </div>
-      <div class="grid image-card">
-        <span class="mPresp-btn-web"></span>
-        <span>
+        </div>
+        <div class="image-card">
           <a href="https://github.com/cgbl-90/color-quiz-app" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small" src="images/quiz.png" alt="Color quiz game" />
+            <img src="images/quiz.png" alt="Color quiz game" />
           </a>
           <h3>Color quiz game</h3>
           <h5>Stack: React JS, CSS</h5>
-        </span>
-        <span>
+        </div>
+        <div class="image-card">
           <a href="https://github.com/cgbl-90/react-lorem-ipsum" target="_blank" rel="noopener noreferrer">
-            <img class="project-image-small project-image-small-sec" src="images/lorem.png"
-              alt="Dummy text generator" />
+            <img src="images/lorem.png" alt="Dummy text generator" />
           </a>
           <h3>Dummy text generator</h3>
           <h5>Stack: React JS, Sass</h5>
-        </span>
+        </div>
       </div>
-    </section>
-  </main>
-  <main id="aboutPage" class="disabled">
-    <section>
-      <h2>About me</h2>
-      <div id="about2" class="flex">
-        <h3 class="flex-child">
-          I'm enthusiastic frontend developer focused on creating
-          customer-centric, responsive websites and mobile apps. Focused on
-          React & Sass. <br /> <br />
-          Previously, I worked as customer support agent, customer support
-          lead, customer success manager & regional/country manager in
-          e-Commerce, SaaS & Gaming companies.
-          <br /> <br />
-          <b>Currently, I'm a Senior Support Engineer at Chromatic!</b>
-        </h3>
-        <span class="flex-child">
-          <img src="images/AVATAR.jpg" alt="Carmen Lopez" />
-        </span>
-      </div>
-    </section>
-    <section id="about3" class="flex">
-      <h2 class="flex-child">I can help you</h2>
-      <h3 class="flex-child">
-        - create a responsive and complex website for your business <br />
-        - migrate migrate legacy code and websites to latests tech stack <br />
-        - migrate your website to a constructor (Wordpress, Tilda, Wix) <br />
-        - create a landing page for your product or service <br />
-        - optimize your app for modularity & speed and much more...
-      </h3>
-    </section>
-    <section>
-      <h2>What people say</h2>
-      <div class="slider flex">
-        <button class="goPrev btnWeb"><img class="goRound" src="images/back.svg" alt="prev" /></button>
-        <article id="review1" class="disabled reviews">
-          <h3>
-            I worked with Carmen at Joom and found her to be an incredibly professional and pleasant person to work
-            with. Carmen is
-            very positive, open and supportive. She was extremely efficient and always met her deadlines.
-          </h3>
-          <h4>Anna Kon, colleague at Joom</h4>
-        </article>
-        <article id="review2" class="disabled reviews">
-          <h3>
-            I worked with Carmen at Remote.com, she was by far an outstanding member of her team, as a CX manager she
-            helped me with clients and employees queries as well as supporting my team by getting accurate data to
-            complete onboarding.
-          </h3>
-          <h4>Vanesa Koopman Esposito, colleague at Remote</h4>
-        </article>
-        <article id="review3" class="enabled reviews">
-          <h3>
-            Really loving Remo, it's brilliant for event networking. Shout out to Carmen who has been so brilliantly
-            helpful too!
-          </h3>
-          <h4>Rachel Kerr, customer at Remo</h4>
-        </article>
-        <article id="review4" class="disabled reviews">
-          <h3>
-            Working with Carmen was a great pleasure. She is one of those people who would ask you a lot of questions
-            around the goals and objectives of a certain project in the beginning before jumping onboard. When she
-            gets the clarity and jumps onboard you can trust that she would get the work done, whatever it takes.
-          </h3>
-          <h4>Ashwin Nandapurkar, colleague at Remo</h4>
-        </article>
-        <button class="goNext btnWeb"><img class="goRound" src="images/next.svg" alt="next" /></button>
-      </div>
-      <span class="btnMob">
-        <button class="goPrev"><img class="goRound" src="images/back.svg" alt="next" /></button>
-        <button class="goNext"><img class="goRound" src="images/next.svg" alt="next" /></button>
-      </span>
-    </section>
-  </main>
-  <footer class="flex flex-f-h">
-    <span class="mPresp-btn-web">
-      <h4>Carmen Lopez</h4>
-    </span>
-    <span class="flex">
+      <button id="next">
+        <img src="images/next.svg" alt="Next" />
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    <span class="flex-r">
       <div>
         <h5>Email me at:</h5>
-        <a class="flashy" href="emailto:carmenbaez2000@gmail.com" target="_blank" rel="noopener noreferrer">
+        <a href="emailto:carmenbaez2000@gmail.com" target="_blank" rel="noopener noreferrer">
           carmenbaez2000@gmail.com
         </a>
       </div>
       <div>
         <h5>Social:</h5>
-        <a class="flashy socialList" href="https://t.me/cg_bl" target="_blank" rel="noopener noreferrer">
+        <a href="https://t.me/cg_bl" target="_blank" rel="noopener noreferrer">
           Telegram
         </a>
-        <a class="flashy socialList" href="https://github.com/cgbl-90" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/cgbl-90" target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
-        <a class="flashy socialList" href="https://www.linkedin.com/in/cgbl/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/cgbl0/" target="_blank" rel="noopener noreferrer">
           LinkedIn
         </a>
       </div>
     </span>
-  </footer>
-  <div class="credits">
-    <p>
-      @design by Anna Sushok, 2023
+    <p class="credits">
+      @ 2024
     </p>
-  </div>
+  </footer>
+
   <!-- Scripts -->
   <script src="script.js"></script>
 </body>

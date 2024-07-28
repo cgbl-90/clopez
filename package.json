@@ -1,7 +1,7 @@
 {
   "name": "clopez",
   "version": "1.0.2",
-  "description": "Frontend developer website portfolio",
+  "description": "carmen l. | portfolio",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

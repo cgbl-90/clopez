@@ -1,1 +1,1 @@
-# title 3
+# Neurointegration, burnout, digital detox, YearCompass & hapiness

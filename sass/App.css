@@ -1,3 +1,4 @@
+/* General Styles */
 body,
 h1,
 h2,
@@ -8,12 +9,42 @@ h6 {
   font-family: "Share Tech Mono", monospace;
 }
 
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.83em;
+}
+
+h6 {
+  font-size: 0.67em;
+}
+
 body {
   color: #5b5b5b;
   padding: 0;
-  max-width: 1270px;
-  margin: 0 auto;
   background-color: #f8f9fa;
+  /* Center text in body */
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ff6347;
 }
 
 ::selection {
@@ -37,8 +68,6 @@ button {
   margin: 0;
   font: inherit;
   cursor: pointer;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .pointer {
@@ -48,25 +77,37 @@ button {
 section {
   margin: 150px 0;
   min-height: 30vmin;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Flexbox Layout */
 .flex-r {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 25%;
   align-items: center;
 }
 
+/* Header and Footer */
 header,
 footer {
   height: 150px;
-  min-height: 50m;
+  min-height: 50px;
 }
 
+footer {
+  margin-top: 50px;
+}
+
+/* Credits Section */
 .credits {
   padding: 50px;
   text-align: center;
 }
 
+/* Icon Styles */
 .icon {
   color: white;
   border: none;
@@ -84,20 +125,26 @@ footer {
 }
 
 /* Grid */
-
-#grid-container {
+#grid-container,
+#pictures {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 10px;
   padding: 20px;
+  text-align: center;
 }
 
-.image-card {
+.image-card,
+.pic-life {
   position: relative;
   border: 1px solid #ddd;
   overflow: hidden;
-  text-align: center;
   border-radius: 4%;
+}
+
+.pic-life {
+  width: 100%;
+  border: 0;
 }
 
 .image-card img {
@@ -110,7 +157,6 @@ footer {
 .image-card h3 {
   margin: 10px 0;
   font-size: 1.2em;
-  text-align: center;
 }
 
 .image-card h5 {
@@ -123,7 +169,6 @@ footer {
   color: #fff;
   padding: 10px;
   font-size: 0.9em;
-  text-align: center;
   transition: background 0.3s;
 }
 
@@ -131,7 +176,6 @@ footer {
   display: block;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
   #grid-container {
     grid-template-columns: 1fr;
@@ -142,27 +186,26 @@ footer {
   }
 }
 
-
 /* Bio Section */
-#bio {
+#bio,
+#life {
   background-color: #333;
-  /* Dark background for contrast */
   color: #fff;
-  /* Light text color for contrast */
-  padding: 40px;
-  border-radius: 10px;
-  /* Rounded corners for a softer look */
+  margin: 0;
+  padding: 20px 0 20px;
+  max-width: 100%;
 }
 
-#bio h5 {
-  margin-bottom: 20px;
+#bio h5,
+.subtitles {
   color: #ff6347;
-  /* Tomato color for a striking header */
+  text-align: center;
 }
 
 #bio h3 {
-  font-size: 1.2em;
   line-height: 1.6;
+  max-width: 1000px;
+  margin: 20px auto;
 }
 
 strong {

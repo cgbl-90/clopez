@@ -69,4 +69,33 @@ document.addEventListener("DOMContentLoaded", function () {
       loadMarkdown(file);
     }
   }
+
+  // Function to load images
+  function loadImages(imagesFolder, imagesList) {
+    const picturesDiv = document.getElementById("pictures");
+
+    imagesList.forEach((image) => {
+      const img = document.createElement("img");
+      img.src = `${imagesFolder}${image}`;
+      img.classList.add("pic-life");
+      picturesDiv.appendChild(img);
+    });
+  }
+
+  // Define the folder and list of images
+  const imagesFolder = "images/life/";
+  const images = [
+    "amsterdam.jpg",
+    "kotor-bay.jpg",
+    "loved-ones.jpg",
+    "olomouc.jpg",
+    "playful.jpg",
+    "sap.jpg",
+    "verona.jpg",
+    "wien.jpg",
+    // Add more image file names here
+  ];
+
+  // Load the images
+  loadImages(imagesFolder, images);
 });

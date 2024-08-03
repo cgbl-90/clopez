@@ -10,7 +10,8 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
   <!-- Sass CSS-->
   <link rel="stylesheet" href="sass/App.css">
   <title>Carmen López — CV</title>
@@ -19,9 +20,7 @@
 <body>
 
   <header class="flex-r">
-    <button onclick="loadPage('index.html')">
-      <h1>🌎</h1>
-    </button>
+    <h1>CGBL</h1>
     <button onclick="loadPage('blog.html')">
       <h3>Blog</h3>
     </button>
@@ -29,9 +28,12 @@
 
   <section id="hero">
     <h1>
-      Carmen López is a customer experience enthusiast, support engineer & frontend developer
+      <strong>Carmen López</strong> is a customer experience enthusiast, support engineer & frontend developer
     </h1>
-    <h5>currently, I work as Support Engineer at Chromatic</h5>
+    <h5>currently, I work as Support Engineer at <a href="https://www.chromatic.com/" target="_blank"
+        rel="noopener noreferrer">
+        Chromatic
+      </a></h5>
   </section>
 
   <section id="bio">
@@ -49,99 +51,91 @@
 
   <section>
     <h5>PET PROJECTS</h5>
-    <div id="carousel-container">
-      <button id="prev">
-        <img class="icon" src="images/back.svg" alt="Previous" />
-      </button>
-      <div id="carousel" class="carousel">
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/react-weather-app" target="_blank" rel="noopener noreferrer">
-            <img src="images/weather.png" alt="Weather Forecast App" />
-          </a>
-          <h3>Weather Forecast App</h3>
-          <h5>Stack: React JS, API, Axios, CSS</h5>
-        </div>
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/dictionary-project" target="_blank" rel="noopener noreferrer">
-            <img src="images/dictionary.png" alt="Dictionary" />
-          </a>
-          <h3>Dictionary</h3>
-          <h5>Stack: React JS, API, Axios, CSS</h5>
-        </div>
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/ether-react-balance" target="_blank" rel="noopener noreferrer">
-            <img src="images/explorer.png" alt="Ethereum Balance Explorer" />
-          </a>
-          <h3>Ethereum Balance Explorer</h3>
-          <h5>Stack: React JS, Ether JS, Sass</h5>
-        </div>
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/axios-countries-api" target="_blank" rel="noopener noreferrer">
-            <img src="images/latam.png" alt="Latam countries data" />
-          </a>
-          <h3>Latam countries data</h3>
-          <h5>Stack: React JS, Axios, API, CSS</h5>
-        </div>
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/sass-furniutr" target="_blank" rel="noopener noreferrer">
-            <img src="images/furniture.png" alt="Furniture e-commerce website" />
-          </a>
-          <h3>Furniture e-commerce website</h3>
-          <h5>Stack: Sass CSS, HTML</h5>
-        </div>
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/sass-thousand-sunny" target="_blank" rel="noopener noreferrer">
-            <img src="images/travel.png" alt="Travel Agency website" />
-          </a>
-          <h3>Travel Agency website</h3>
-          <h5>Stack: Sass CSS, HTML</h5>
-        </div>
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/ether-react-smart-contract" target="_blank" rel="noopener noreferrer">
-            <img src="images/contract.png" alt="Ethereum smart contract reader" />
-          </a>
-          <h3>Ethereum smart contract reader</h3>
-          <h5>Stack: Stack: React JS, Ether JS, Infura API, Sass</h5>
-        </div>
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/react-quiz-app" target="_blank" rel="noopener noreferrer">
-            <img src="images/quiz.png" alt="Quiz app" />
-          </a>
-          <h3>Quiz app</h3>
-          <h5>Stack: React JS, CSS</h5>
-        </div>
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/react-color-generator" target="_blank" rel="noopener noreferrer">
-            <img src="images/color.png" alt="Color palette generator" />
-          </a>
-          <h3>Color palette generator</h3>
-          <h5>Stack: React JS, Sass, Values.js</h5>
-        </div>
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/pwd-generator" target="_blank" rel="noopener noreferrer">
-            <img src="images/password.png" alt="Password generator" />
-          </a>
-          <h3>Password generator</h3>
-          <h5>Stack: Javascript, HTML/CSS</h5>
-        </div>
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/color-quiz-app" target="_blank" rel="noopener noreferrer">
-            <img src="images/quiz.png" alt="Color quiz game" />
-          </a>
-          <h3>Color quiz game</h3>
-          <h5>Stack: React JS, CSS</h5>
-        </div>
-        <div class="image-card">
-          <a href="https://github.com/cgbl-90/react-lorem-ipsum" target="_blank" rel="noopener noreferrer">
-            <img src="images/lorem.png" alt="Dummy text generator" />
-          </a>
-          <h3>Dummy text generator</h3>
-          <h5>Stack: React JS, Sass</h5>
-        </div>
+    <div id="grid-container">
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/react-weather-app" target="_blank" rel="noopener noreferrer">
+          <img src="images/weather.png" alt="Weather Forecast App" />
+        </a>
+        <h3>Weather Forecast App</h3>
+        <h5>Stack: React JS, API, Axios, CSS</h5>
       </div>
-      <button id="next">
-        <img class="icon" src="images/next.svg" alt="Next" />
-      </button>
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/dictionary-project" target="_blank" rel="noopener noreferrer">
+          <img src="images/dictionary.png" alt="Dictionary" />
+        </a>
+        <h3>Dictionary</h3>
+        <h5>Stack: React JS, API, Axios, CSS</h5>
+      </div>
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/ether-react-balance" target="_blank" rel="noopener noreferrer">
+          <img src="images/explorer.png" alt="Ethereum Balance Explorer" />
+        </a>
+        <h3>Ethereum Balance Explorer</h3>
+        <h5>Stack: React JS, Ether JS, Sass</h5>
+      </div>
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/axios-countries-api" target="_blank" rel="noopener noreferrer">
+          <img src="images/latam.png" alt="Latam countries data" />
+        </a>
+        <h3>Latam countries data</h3>
+        <h5>Stack: React JS, Axios, API, CSS</h5>
+      </div>
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/sass-furniutr" target="_blank" rel="noopener noreferrer">
+          <img src="images/furniture.png" alt="Furniture e-commerce website" />
+        </a>
+        <h3>Furniture e-commerce website</h3>
+        <h5>Stack: Sass CSS, HTML</h5>
+      </div>
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/sass-thousand-sunny" target="_blank" rel="noopener noreferrer">
+          <img src="images/travel.png" alt="Travel Agency website" />
+        </a>
+        <h3>Travel Agency website</h3>
+        <h5>Stack: Sass CSS, HTML</h5>
+      </div>
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/ether-react-smart-contract" target="_blank" rel="noopener noreferrer">
+          <img src="images/contract.png" alt="Ethereum smart contract reader" />
+        </a>
+        <h3>Ethereum smart contract reader</h3>
+        <h5>Stack: Stack: React JS, Ether JS, Infura API, Sass</h5>
+      </div>
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/react-quiz-app" target="_blank" rel="noopener noreferrer">
+          <img src="images/quiz.png" alt="Quiz app" />
+        </a>
+        <h3>Quiz app</h3>
+        <h5>Stack: React JS, CSS</h5>
+      </div>
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/react-color-generator" target="_blank" rel="noopener noreferrer">
+          <img src="images/color.png" alt="Color palette generator" />
+        </a>
+        <h3>Color palette generator</h3>
+        <h5>Stack: React JS, Sass, Values.js</h5>
+      </div>
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/pwd-generator" target="_blank" rel="noopener noreferrer">
+          <img src="images/password.png" alt="Password generator" />
+        </a>
+        <h3>Password generator</h3>
+        <h5>Stack: Javascript, HTML/CSS</h5>
+      </div>
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/color-quiz-app" target="_blank" rel="noopener noreferrer">
+          <img src="images/quiz.png" alt="Color quiz game" />
+        </a>
+        <h3>Color quiz game</h3>
+        <h5>Stack: React JS, CSS</h5>
+      </div>
+      <div class="image-card">
+        <a href="https://github.com/cgbl-90/react-lorem-ipsum" target="_blank" rel="noopener noreferrer">
+          <img src="images/lorem.png" alt="Dummy text generator" />
+        </a>
+        <h3>Dummy text generator</h3>
+        <h5>Stack: React JS, Sass</h5>
+      </div>
     </div>
   </section>
 

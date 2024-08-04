@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const backButton = document.getElementById("back-button");
   if (backButton) {
     backButton.addEventListener("click", function () {
-      loadPage("index.html");
+      loadPage("index.html"); // Load the main page when the back button is clicked
     });
   }
 
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Define the folder and list of images to load
   const imagesFolder = "images/life/";
-  const images = [ 
+  const images = [
     "amsterdam.jpg",
     "kotor-bay.jpg",
     "loved-ones.jpg",
@@ -51,7 +51,7 @@ function loadPage(page) {
 
 // Function to extract metadata from a markdown file
 function extractMetadata(markdown) {
-  const metadataPattern = /<!--\s*([\s\S]*?)\s*-->/;
+  const metadataPattern = /<!--\s*([\s\S]*?)\s*-->/; // Regex pattern to find metadata in HTML comment style
   const match = markdown.match(metadataPattern);
 
   if (match) {
@@ -60,7 +60,7 @@ function extractMetadata(markdown) {
     metadataString.split("\n").forEach((line) => {
       const [key, value] = line.split(":");
       if (key && value) {
-        metadata[key.trim()] = value.trim().replace(/['"]/g, "");
+        metadata[key.trim()] = value.trim().replace(/['"]/g, ""); // Clean metadata
       }
     });
     return metadata;
@@ -80,6 +80,7 @@ function loadMarkdown(file, elementId = "post-content") {
         const tag = metadata.tag || "No Tag";
         const lang = metadata.lang || "Unknown Language";
 
+        // Create and append article item
         const articleDiv = document.createElement("div");
         articleDiv.classList.add("article-item");
 
@@ -114,7 +115,7 @@ function loadMarkdown(file, elementId = "post-content") {
       } else {
         // Display article content
         const htmlContent = marked.parse(
-          markdown.replace(/<!--[\s\S]*?-->/, "").trim()
+          markdown.replace(/<!--[\s\S]*?-->/, "").trim() // Remove metadata comments
         );
         const postContentElement = document.getElementById(elementId);
         if (postContentElement) {
@@ -140,6 +141,7 @@ function loadAllMarkdowns(directory) {
       return response.text();
     })
     .then((data) => {
+      // Parse the directory contents as HTML
       const parser = new DOMParser();
       const doc = parser.parseFromString(data, "text/html");
       const links = Array.from(doc.querySelectorAll("a")).filter((link) =>
@@ -150,6 +152,7 @@ function loadAllMarkdowns(directory) {
         console.warn("No Markdown files found in the directory.");
       }
 
+      // Load each Markdown file and process it
       links.forEach((link) => {
         loadMarkdown(link.href, "blog-links");
       });

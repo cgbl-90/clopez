@@ -1,4 +1,43 @@
-// Function to load HTML page
+// Wait until the DOM is fully loaded before executing the script
+document.addEventListener("DOMContentLoaded", function () {
+  // Handle the back button click event
+  const backButton = document.getElementById("back-button");
+  if (backButton) {
+    backButton.addEventListener("click", function () {
+      loadPage("index.html");
+    });
+  }
+
+  // Check if we are on the blog list page or the post page
+  if (document.getElementById("blog-links")) {
+    // Load all markdown files if the blog-links element exists
+    loadAllMarkdowns("articles/");
+  } else if (document.getElementById("post-content")) {
+    // Load a specific markdown post if post-content element exists
+    const file = getUrlParameter("file");
+    if (file) {
+      loadMarkdown(file);
+    }
+  }
+
+  // Define the folder and list of images to load
+  const imagesFolder = "images/life/";
+  const images = [
+    "amsterdam.jpg",
+    "kotor-bay.jpg",
+    "loved-ones.jpg",
+    "olomouc.jpg",
+    "playful.jpg",
+    "sap.jpg",
+    "verona.jpg",
+    "wien.jpg",
+  ];
+
+  // Load the images into the page
+  loadImages(imagesFolder, images);
+});
+
+// Function to load an HTML page into the document
 function loadPage(page) {
   fetch(page)
     .then((response) => response.text())
@@ -10,7 +49,7 @@ function loadPage(page) {
     .catch((err) => console.warn("Something went wrong.", err));
 }
 
-// Function to extract metadata from markdown
+// Function to extract metadata from a markdown file
 function extractMetadata(markdown) {
   const metadataPattern = /<!--\s*([\s\S]*?)\s*-->/;
   const match = markdown.match(metadataPattern);
@@ -29,7 +68,7 @@ function extractMetadata(markdown) {
   return {};
 }
 
-// Function to load and parse markdown file
+// Function to load and parse a markdown file
 function loadMarkdown(file, elementId = "post-content") {
   fetch(file)
     .then((response) => response.text())
@@ -60,7 +99,7 @@ function loadMarkdown(file, elementId = "post-content") {
         articleDiv.appendChild(tagElement);
         articleDiv.appendChild(langElement);
 
-        // Link to the article post
+        // Create a link to the article post
         const link = document.createElement("a");
         link.href = `post.html?file=${file}`;
         link.appendChild(articleDiv);
@@ -121,7 +160,7 @@ function loadAllMarkdowns(directory) {
     });
 }
 
-// Function to get URL parameter by name
+// Function to get a URL parameter by name
 function getUrlParameter(name) {
   name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
   const regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
@@ -131,7 +170,7 @@ function getUrlParameter(name) {
     : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-// Function to load images
+// Function to load images into the page
 function loadImages(imagesFolder, imagesList) {
   const picturesDiv = document.getElementById("pictures");
   if (!picturesDiv) {
@@ -146,43 +185,3 @@ function loadImages(imagesFolder, imagesList) {
     picturesDiv.appendChild(img);
   });
 }
-
-// Add event listeners to buttons
-document.addEventListener("DOMContentLoaded", function () {
-  // Handle back button
-  const backButton = document.getElementById("back-button");
-  if (backButton) {
-    backButton.addEventListener("click", function () {
-      loadPage("index.html");
-    });
-  }
-
-  // Check if we are on the blog list page or the post page
-  if (document.getElementById("blog-links")) {
-    // Load blog list if the blog-links element exists
-    loadAllMarkdowns("articles/");
-  } else if (document.getElementById("post-content")) {
-    // Load specific post content if post-content element exists
-    const file = getUrlParameter("file");
-    if (file) {
-      loadMarkdown(file);
-    }
-  }
-
-  // Define the folder and list of images
-  const imagesFolder = "images/life/";
-  const images = [
-    "amsterdam.jpg",
-    "kotor-bay.jpg",
-    "loved-ones.jpg",
-    "olomouc.jpg",
-    "playful.jpg",
-    "sap.jpg",
-    "verona.jpg",
-    "wien.jpg",
-    // Add more image file names here
-  ];
-
-  // Load the images
-  loadImages(imagesFolder, images);
-});

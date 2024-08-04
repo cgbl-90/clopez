@@ -130,7 +130,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 10px;
-  padding: 20px;
+  padding: 5px;
   text-align: center;
 }
 
@@ -138,12 +138,14 @@ footer {
 .pic-life {
   position: relative;
   border: 1px solid #ddd;
+  border-radius: 4px;
   overflow: hidden;
-  border-radius: 4%;
 }
 
 .pic-life {
   width: 100%;
+  height: auto;
+  display: block;
   border: 0;
 }
 
@@ -210,4 +212,124 @@ footer {
 
 strong {
   color: #ff6347;
+}
+
+/* Blog */
+
+#blog-links {
+  margin: 20px;
+}
+
+.article-item {
+  margin-bottom: 20px;
+}
+
+.art-title {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.art-title:hover {
+  text-decoration: underline;
+  color: #ff6347;
+}
+
+.tag,
+.lang {
+  color: #666;
+  display: inline-block;
+  margin-top: 6px;
+  margin-right: 10px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  border: 1px solid #ff6347;
+  background-color: #f9f9f9;
+  text-transform: capitalize;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Style for the entire table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+/* Style for table headers */
+th {
+  background-color: #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Style for table data cells */
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+/* Style for table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f7cbc4;
+}
+
+/* Style for table captions */
+caption {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  th {
+    position: absolute;
+    background: #4CAF50;
+    color: white;
+  }
+
+  td {
+    text-align: center;
+    position: relative;
+    border: none;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+#post-content a {
+  color: #4CAF50;
+}
+
+#post-content img {
+  width: 80%;
 }

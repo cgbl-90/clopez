@@ -1,159 +1,176 @@
-let btns = document.querySelectorAll("button");
-let articles = document.querySelectorAll("article");
-let mainPage = document.getElementById("mainPage");
-let projectPage = document.getElementById("projectPage");
-let aboutPage = document.getElementById("aboutPage");
-let moreLessClients = document.getElementById("moreLessClients");
-moreLessClients.addEventListener("click", showHideContent);
-let showHideClients = false;
-let revPosition = 0;
-let burgerMenu = document.getElementsByClassName("hideDropdown");
-let burgerOpen = document.getElementsByClassName("openBurger");
-let burgerClose = document.getElementsByClassName("closeBurger");
-
-btns.forEach((btn) => {
-  btn.addEventListener("click", function (e) {
-    let styles = e.currentTarget.classList;
-    // HIDE & SHOW PAGES
-    if (styles.contains("mainPage")) {
-      // show
-      mainPage.classList.add("enabled");
-      mainPage.classList.remove("disabled");
-      // hide
-      projectPage.classList.remove("enabled");
-      aboutPage.classList.remove("enabled");
-      projectPage.classList.add("disabled");
-      aboutPage.classList.add("disabled");
-      hideBtns();
-    }
-    if (styles.contains("projectPage")) {
-      // show
-      projectPage.classList.add("enabled");
-      projectPage.classList.remove("disabled");
-      // hide
-      mainPage.classList.remove("enabled");
-      mainPage.classList.add("disabled");
-      aboutPage.classList.remove("enabled");
-      aboutPage.classList.add("disabled");
-      hideBtns();
-      //
-      for (let i = 0; i < btns.length; i++)
-        btns[i].classList.remove("underlined");
-      btn.classList.add("underlined");
-    }
-    if (styles.contains("aboutPage")) {
-      // show
-      aboutPage.classList.add("enabled");
-      aboutPage.classList.remove("disabled");
-      // hide
-      mainPage.classList.remove("enabled");
-      mainPage.classList.add("disabled");
-      projectPage.classList.remove("enabled");
-      projectPage.classList.add("disabled");
-      hideBtns();
-      //
-      for (let i = 0; i < btns.length; i++)
-        btns[i].classList.remove("underlined");
-      btn.classList.add("underlined");
-    }
-
-    // CHANGE REVIEW
-
-    if (styles.contains("goNext")) {
-      articles.forEach((art) => {
-        if (art.classList.contains("enabled"))
-          revPosition = Number(art.id.slice(-1));
-      });
-      if (revPosition === articles.length) revPosition = 1;
-      else revPosition = revPosition + 1;
-
-      articles.forEach((art) => {
-        if (art.id.slice(-1) == revPosition) {
-          art.classList.add("enabled");
-          art.classList.remove("disabled");
-        } else {
-          art.classList.add("disabled");
-          art.classList.remove("enabled");
-        }
-      });
-    }
-
-    if (styles.contains("goPrev")) {
-      articles.forEach((art) => {
-        if (art.classList.contains("enabled"))
-          revPosition = Number(art.id.slice(-1));
-      });
-      if (revPosition === 1) revPosition = articles.length;
-      else revPosition = revPosition - 1;
-
-      articles.forEach((art) => {
-        if (art.id.slice(-1) == revPosition) {
-          art.classList.add("enabled");
-          art.classList.remove("disabled");
-        } else {
-          art.classList.add("disabled");
-          art.classList.remove("enabled");
-        }
-      });
-    }
-
-    // BURGER MENU
-
-    if (styles.contains("openBurger")) {
-      burgerMenu[0].style.display = "block";
-      burgerClose[0].style.display = "block";
-      burgerOpen[0].style.display = "none";
-    }
-
-    if (styles.contains("closeBurger")) hideBtns();
-
-    function hideBtns() {
-      burgerMenu[0].style.display = "none";
-      burgerClose[0].style.display = "none";
-      burgerOpen[0].style.display = "block";
-    }
-  });
-});
-
-// HIDE & SHOW CLIENTS EXTENDED LIST
-
-function showHideContent(e) {
-  e.preventDefault();
-
-  if (!showHideClients) {
-    moreLessClients.insertAdjacentHTML(
-      "beforebegin",
-      `<li class="remove">Harvard</li>`
-    );
-    moreLessClients.insertAdjacentHTML(
-      "beforebegin",
-      `<li class="remove">Typeform</li>`
-    );
-    moreLessClients.insertAdjacentHTML(
-      "beforebegin",
-      `<li class="remove">Workato</li>`
-    );
-    moreLessClients.insertAdjacentHTML(
-      "beforebegin",
-      `<li class="remove">Running Remote</li>`
-    );
-    moreLessClients.innerHTML = `<button class="centered">↑</button>`;
-    showHideClients = true;
-  } else {
-    let Lis = document.querySelectorAll("li");
-    Lis.forEach((el) => {
-      if (el.classList.contains("remove")) el.remove();
-    });
-    moreLessClients.innerHTML = `<li>& More </li>`;
-    showHideClients = false;
-  }
+// Function to load HTML page
+function loadPage(page) {
+  fetch(page)
+    .then((response) => response.text())
+    .then((html) => {
+      document.open();
+      document.write(html);
+      document.close();
+    })
+    .catch((err) => console.warn("Something went wrong.", err));
 }
 
-// MEDIA QUERY
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 560) {
-    burgerMenu[0].style.display = "none";
-    burgerClose[0].style.display = "none";
-    burgerOpen[0].style.display = "block";
+// Function to extract metadata from markdown
+function extractMetadata(markdown) {
+  const metadataPattern = /<!--\s*([\s\S]*?)\s*-->/;
+  const match = markdown.match(metadataPattern);
+
+  if (match) {
+    const metadataString = match[1];
+    const metadata = {};
+    metadataString.split("\n").forEach((line) => {
+      const [key, value] = line.split(":");
+      if (key && value) {
+        metadata[key.trim()] = value.trim().replace(/['"]/g, "");
+      }
+    });
+    return metadata;
   }
+  return {};
+}
+
+// Function to load and parse markdown file
+function loadMarkdown(file, elementId = "post-content") {
+  fetch(file)
+    .then((response) => response.text())
+    .then((markdown) => {
+      if (elementId === "blog-links") {
+        // Extract metadata and display article list
+        const metadata = extractMetadata(markdown);
+        const title = metadata.title || "Untitled";
+        const tag = metadata.tag || "No Tag";
+        const lang = metadata.lang || "Unknown Language";
+
+        const articleDiv = document.createElement("div");
+        articleDiv.classList.add("article-item");
+
+        const titleElement = document.createElement("h3");
+        titleElement.classList.add("art-title");
+        titleElement.textContent = title;
+
+        const tagElement = document.createElement("h5");
+        tagElement.classList.add("tag");
+        tagElement.textContent = tag;
+
+        const langElement = document.createElement("h5");
+        langElement.classList.add("lang");
+        langElement.textContent = lang;
+
+        articleDiv.appendChild(titleElement);
+        articleDiv.appendChild(tagElement);
+        articleDiv.appendChild(langElement);
+
+        // Link to the article post
+        const link = document.createElement("a");
+        link.href = `post.html?file=${file}`;
+        link.appendChild(articleDiv);
+
+        document.getElementById("blog-links").appendChild(link);
+        document
+          .getElementById("blog-links")
+          .appendChild(document.createElement("br"));
+      } else {
+        // Display article content
+        const htmlContent = marked.parse(
+          markdown.replace(/<!--[\s\S]*?-->/, "").trim()
+        );
+        document.getElementById(elementId).innerHTML = htmlContent;
+      }
+    })
+    .catch((err) => {
+      console.error("Error loading markdown file:", err);
+      alert("Error loading markdown file. Check console for details.");
+    });
+}
+
+// Function to load all markdown files from a directory and generate links
+function loadAllMarkdowns(directory) {
+  fetch(directory)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      return response.text();
+    })
+    .then((data) => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(data, "text/html");
+      const links = Array.from(doc.querySelectorAll("a")).filter((link) =>
+        link.href.endsWith(".md")
+      );
+
+      if (links.length === 0) {
+        console.warn("No Markdown files found in the directory.");
+      }
+
+      links.forEach((link) => {
+        loadMarkdown(link.href, "blog-links");
+      });
+    })
+    .catch((err) => {
+      console.error("Error loading markdown directory:", err);
+      alert("Error loading markdown directory. Check console for details.");
+    });
+}
+
+// Function to get URL parameter by name
+function getUrlParameter(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  const regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+  const results = regex.exec(location.search);
+  return results === null
+    ? ""
+    : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+// Function to load images
+function loadImages(imagesFolder, imagesList) {
+  const picturesDiv = document.getElementById("pictures");
+
+  imagesList.forEach((image) => {
+    const img = document.createElement("img");
+    img.src = `${imagesFolder}${image}`;
+    img.classList.add("pic-life");
+    picturesDiv.appendChild(img);
+  });
+}
+
+// Add event listeners to buttons
+document.addEventListener("DOMContentLoaded", function () {
+  // Handle back button
+  const backButton = document.getElementById("back-button");
+  if (backButton) {
+    backButton.addEventListener("click", function () {
+      loadPage("index.html");
+    });
+  }
+
+  // Check if we are on the blog list page or the post page
+  if (document.getElementById("blog-links")) {
+    // Load blog list if the blog-links element exists
+    loadAllMarkdowns("articles/");
+  } else if (document.getElementById("post-content")) {
+    // Load specific post content if post-content element exists
+    const file = getUrlParameter("file");
+    if (file) {
+      loadMarkdown(file);
+    }
+  }
+
+  // Define the folder and list of images
+  const imagesFolder = "images/life/";
+  const images = [
+    "amsterdam.jpg",
+    "kotor-bay.jpg",
+    "loved-ones.jpg",
+    "olomouc.jpg",
+    "playful.jpg",
+    "sap.jpg",
+    "verona.jpg",
+    "wien.jpg",
+    // Add more image file names here
+  ];
+
+  // Load the images
+  loadImages(imagesFolder, images);
 });

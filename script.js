@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Check if we are on the blog list page or the post page
   if (document.getElementById("blog-links")) {
     // Load all markdown files if the blog-links element exists
-    loadAllMarkdowns("articles/");
+    loadAllMarkdowns("../articles/");
   } else if (document.getElementById("post-content")) {
     // Load a specific markdown post if post-content element exists
     const file = getUrlParameter("file");
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Define the folder and list of images to load
   const imagesFolder = "images/life/";
-  const images = [
+  const images = [ 
     "amsterdam.jpg",
     "kotor-bay.jpg",
     "loved-ones.jpg",

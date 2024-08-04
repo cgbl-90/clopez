@@ -65,16 +65,24 @@ function loadMarkdown(file, elementId = "post-content") {
         link.href = `post.html?file=${file}`;
         link.appendChild(articleDiv);
 
-        document.getElementById("blog-links").appendChild(link);
-        document
-          .getElementById("blog-links")
-          .appendChild(document.createElement("br"));
+        const blogLinksElement = document.getElementById("blog-links");
+        if (blogLinksElement) {
+          blogLinksElement.appendChild(link);
+          blogLinksElement.appendChild(document.createElement("br"));
+        } else {
+          console.error('Element with id "blog-links" not found.');
+        }
       } else {
         // Display article content
         const htmlContent = marked.parse(
           markdown.replace(/<!--[\s\S]*?-->/, "").trim()
         );
-        document.getElementById(elementId).innerHTML = htmlContent;
+        const postContentElement = document.getElementById(elementId);
+        if (postContentElement) {
+          postContentElement.innerHTML = htmlContent;
+        } else {
+          console.error(`Element with id "${elementId}" not found.`);
+        }
       }
     })
     .catch((err) => {
@@ -126,6 +134,10 @@ function getUrlParameter(name) {
 // Function to load images
 function loadImages(imagesFolder, imagesList) {
   const picturesDiv = document.getElementById("pictures");
+  if (!picturesDiv) {
+    console.error('Element with id "pictures" not found.');
+    return;
+  }
 
   imagesList.forEach((image) => {
     const img = document.createElement("img");

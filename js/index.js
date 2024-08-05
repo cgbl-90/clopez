@@ -10,13 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Check if we are on the blog list page or the post page
   if (document.getElementById("blog-links")) {
-    // Load all markdown files if the blog-links element exists
-    loadAllMarkdowns("../articles/");
+    // Load all JSON files if the blog-links element exists
+    loadAllJsons("../articles/");
   } else if (document.getElementById("post-content")) {
-    // Load a specific markdown post if post-content element exists
+    // Load a specific JSON post if post-content element exists
     const file = getUrlParameter("file");
     if (file) {
-      loadMarkdown(file);
+      loadJson(file);
     }
   }
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "wien.jpg",
   ];
 
-  // Load the images into the page
+  // Load images on all pages
   loadImages(imagesFolder, images);
 });
 
@@ -49,46 +49,21 @@ function loadPage(page) {
     .catch((err) => console.warn("Something went wrong.", err));
 }
 
-// Function to extract metadata from a markdown file
-function extractMetadata(markdown) {
-  const metadataPattern = /<!--\s*([\s\S]*?)\s*-->/; // Regex pattern to find metadata in HTML comment style
-  const match = markdown.match(metadataPattern);
-
-  if (match) {
-    const metadataString = match[1];
-    const metadata = {};
-    metadataString.split("\n").forEach((line) => {
-      const [key, value] = line.split(":");
-      if (key && value) {
-        metadata[key.trim()] = value.trim().replace(/['"]/g, ""); // Clean metadata
-      }
-    });
-    return metadata;
-  }
-  return {};
-}
-
-// Function to add delay
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-// Async function to load and parse a markdown file
-async function loadMarkdown(file, elementId = "post-content") {
+// Function to load and display JSON blog post data
+async function loadJson(file, elementId = "post-content") {
   try {
     // Add a delay before loading the file
     await delay(500);
 
-    // Fetch the markdown file
+    // Fetch the JSON file
     const response = await fetch(file);
-    const markdown = await response.text();
+    const data = await response.json();
 
     if (elementId === "blog-links") {
-      // Extract metadata and display article list
-      const metadata = extractMetadata(markdown);
-      const title = metadata.title || "Untitled";
-      const tag = metadata.tag || "No Tag";
-      const lang = metadata.lang || "Unknown Language";
+      // Display blog post preview
+      const title = data.title || "Untitled";
+      const tag = data.tag || "No Tag";
+      const lang = data.lang || "Unknown Language";
 
       // Create and append article item
       const articleDiv = document.createElement("div");
@@ -123,10 +98,8 @@ async function loadMarkdown(file, elementId = "post-content") {
         console.error('Element with id "blog-links" not found.');
       }
     } else {
-      // Display article content
-      const htmlContent = marked.parse(
-        markdown.replace(/<!--[\s\S]*?-->/, "").trim() // Remove metadata comments
-      );
+      // Display blog post content
+      const htmlContent = `<h1>${data.title}</h1><div>${data.text}</div>`;
       const postContentElement = document.getElementById(elementId);
       if (postContentElement) {
         postContentElement.innerHTML = htmlContent;
@@ -135,13 +108,13 @@ async function loadMarkdown(file, elementId = "post-content") {
       }
     }
   } catch (err) {
-    console.error("Error loading markdown file:", err);
-    alert("Error loading markdown file. Check console for details.");
+    console.error("Error loading JSON file:", err);
+    alert("Error loading JSON file. Check console for details.");
   }
 }
 
-// Function to load all markdown files from a directory and generate links
-function loadAllMarkdowns(directory) {
+// Function to load all JSON files from a directory and generate links
+function loadAllJsons(directory) {
   fetch(directory)
     .then((response) => {
       if (!response.ok) {
@@ -154,21 +127,21 @@ function loadAllMarkdowns(directory) {
       const parser = new DOMParser();
       const doc = parser.parseFromString(data, "text/html");
       const links = Array.from(doc.querySelectorAll("a")).filter((link) =>
-        link.href.endsWith(".md")
+        link.href.endsWith(".json")
       );
 
       if (links.length === 0) {
-        console.warn("No Markdown files found in the directory.");
+        console.warn("No JSON files found in the directory.");
       }
 
-      // Load each Markdown file and process it
+      // Load each JSON file and process it
       links.forEach((link) => {
-        loadMarkdown(link.href, "blog-links");
+        loadJson(link.href, "blog-links");
       });
     })
     .catch((err) => {
-      console.error("Error loading markdown directory:", err);
-      alert("Error loading markdown directory. Check console for details.");
+      console.error("Error loading JSON directory:", err);
+      alert("Error loading JSON directory. Check console for details.");
     });
 }
 
@@ -196,4 +169,9 @@ function loadImages(imagesFolder, imagesList) {
     img.classList.add("pic-life");
     picturesDiv.appendChild(img);
   });
+}
+
+// Function to add delay
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }

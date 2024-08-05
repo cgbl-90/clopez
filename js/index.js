@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Check if we are on the blog list page or the post page
   if (document.getElementById("blog-links")) {
     // Load all JSON files if the blog-links element exists
-    loadAllJsons("/articles/");
+    loadAllJsons("../articles/");
   } else if (document.getElementById("post-content")) {
     // Load a specific JSON post if post-content element exists
     const file = getUrlParameter("file");

@@ -40,13 +40,21 @@ document.addEventListener("DOMContentLoaded", function () {
 // Function to load an HTML page into the document
 function loadPage(page) {
   fetch(page)
-    .then((response) => response.text())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Failed to load page: ${response.statusText}`);
+      }
+      return response.text();
+    })
     .then((html) => {
       document.open();
       document.write(html);
       document.close();
     })
-    .catch((err) => console.warn("Something went wrong.", err));
+    .catch((err) => {
+      console.error("Error loading page:", err);
+      alert("Error loading page. Check console for details.");
+    });
 }
 
 // Function to load and display JSON blog post data
@@ -56,7 +64,11 @@ async function loadJson(file, elementId = "post-content") {
     await delay(500);
 
     // Fetch the JSON file
+    console.log(`Fetching JSON from: ${file}`);
     const response = await fetch(file);
+    if (!response.ok) {
+      throw new Error(`Failed to load JSON file: ${response.statusText}`);
+    }
     const data = await response.json();
 
     if (elementId === "blog-links") {
@@ -115,10 +127,11 @@ async function loadJson(file, elementId = "post-content") {
 
 // Function to load all JSON files from a directory and generate links
 function loadAllJsons(directory) {
+  console.log(`Fetching directory contents from: ${directory}`);
   fetch(directory)
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`Network response was not ok: ${response.statusText}`);
+        throw new Error(`Failed to load directory: ${response.statusText}`);
       }
       return response.text();
     })
@@ -175,3 +188,14 @@ function loadImages(imagesFolder, imagesList) {
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+function loadFooter() {
+  fetch("footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer-container").innerHTML = data;
+    })
+    .catch((error) => console.error("Error loading footer:", error));
+}
+
+document.addEventListener("DOMContentLoaded", loadFooter);

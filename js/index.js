@@ -68,67 +68,76 @@ function extractMetadata(markdown) {
   return {};
 }
 
-// Function to load and parse a markdown file
-function loadMarkdown(file, elementId = "post-content") {
-  fetch(file)
-    .then((response) => response.text())
-    .then((markdown) => {
-      if (elementId === "blog-links") {
-        // Extract metadata and display article list
-        const metadata = extractMetadata(markdown);
-        const title = metadata.title || "Untitled";
-        const tag = metadata.tag || "No Tag";
-        const lang = metadata.lang || "Unknown Language";
+// Function to add delay
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-        // Create and append article item
-        const articleDiv = document.createElement("div");
-        articleDiv.classList.add("article-item");
+// Async function to load and parse a markdown file
+async function loadMarkdown(file, elementId = "post-content") {
+  try {
+    // Add a delay before loading the file
+    await delay(500);
 
-        const titleElement = document.createElement("h3");
-        titleElement.classList.add("art-title");
-        titleElement.textContent = title;
+    // Fetch the markdown file
+    const response = await fetch(file);
+    const markdown = await response.text();
 
-        const tagElement = document.createElement("h5");
-        tagElement.classList.add("tag");
-        tagElement.textContent = tag;
+    if (elementId === "blog-links") {
+      // Extract metadata and display article list
+      const metadata = extractMetadata(markdown);
+      const title = metadata.title || "Untitled";
+      const tag = metadata.tag || "No Tag";
+      const lang = metadata.lang || "Unknown Language";
 
-        const langElement = document.createElement("h5");
-        langElement.classList.add("lang");
-        langElement.textContent = lang;
+      // Create and append article item
+      const articleDiv = document.createElement("div");
+      articleDiv.classList.add("article-item");
 
-        articleDiv.appendChild(titleElement);
-        articleDiv.appendChild(tagElement);
-        articleDiv.appendChild(langElement);
+      const titleElement = document.createElement("h3");
+      titleElement.classList.add("art-title");
+      titleElement.textContent = title;
 
-        // Create a link to the article post
-        const link = document.createElement("a");
-        link.href = `post.html?file=${file}`;
-        link.appendChild(articleDiv);
+      const tagElement = document.createElement("h5");
+      tagElement.classList.add("tag");
+      tagElement.textContent = tag;
 
-        const blogLinksElement = document.getElementById("blog-links");
-        if (blogLinksElement) {
-          blogLinksElement.appendChild(link);
-          blogLinksElement.appendChild(document.createElement("br"));
-        } else {
-          console.error('Element with id "blog-links" not found.');
-        }
+      const langElement = document.createElement("h5");
+      langElement.classList.add("lang");
+      langElement.textContent = lang;
+
+      articleDiv.appendChild(titleElement);
+      articleDiv.appendChild(tagElement);
+      articleDiv.appendChild(langElement);
+
+      // Create a link to the article post
+      const link = document.createElement("a");
+      link.href = `post.html?file=${file}`;
+      link.appendChild(articleDiv);
+
+      const blogLinksElement = document.getElementById("blog-links");
+      if (blogLinksElement) {
+        blogLinksElement.appendChild(link);
+        blogLinksElement.appendChild(document.createElement("br"));
       } else {
-        // Display article content
-        const htmlContent = marked.parse(
-          markdown.replace(/<!--[\s\S]*?-->/, "").trim() // Remove metadata comments
-        );
-        const postContentElement = document.getElementById(elementId);
-        if (postContentElement) {
-          postContentElement.innerHTML = htmlContent;
-        } else {
-          console.error(`Element with id "${elementId}" not found.`);
-        }
+        console.error('Element with id "blog-links" not found.');
       }
-    })
-    .catch((err) => {
-      console.error("Error loading markdown file:", err);
-      alert("Error loading markdown file. Check console for details.");
-    });
+    } else {
+      // Display article content
+      const htmlContent = marked.parse(
+        markdown.replace(/<!--[\s\S]*?-->/, "").trim() // Remove metadata comments
+      );
+      const postContentElement = document.getElementById(elementId);
+      if (postContentElement) {
+        postContentElement.innerHTML = htmlContent;
+      } else {
+        console.error(`Element with id "${elementId}" not found.`);
+      }
+    }
+  } catch (err) {
+    console.error("Error loading markdown file:", err);
+    alert("Error loading markdown file. Check console for details.");
+  }
 }
 
 // Function to load all markdown files from a directory and generate links

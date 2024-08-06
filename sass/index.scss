@@ -222,9 +222,6 @@ strong {
 }
 
 /* Blog */
-#blog-links {
-  margin: 20px;
-}
 
 .article-item {
   margin-bottom: 20px;
@@ -234,6 +231,7 @@ strong {
   color: $text-color;
   text-decoration: none;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .art-title:hover {
@@ -241,13 +239,10 @@ strong {
   color: $highlight-color;
 }
 
-.tag,
-.lang {
+.tags {
   color: #666;
   display: inline-block;
-  margin-top: 6px;
-  margin-right: 10px;
-  padding: 3px 6px;
+  padding: 5px;
   border-radius: 4px;
   border: 1px solid $highlight-color;
   background-color: $background-color;

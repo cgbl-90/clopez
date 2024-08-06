@@ -186,3 +186,11 @@ function loadFooter() {
 }
 
 document.addEventListener("DOMContentLoaded", loadFooter);
+
+function loadArticle(articleId) {
+  window.location.href = `post.html?article=${articleId}`;
+}
+
+function loadPage(page) {
+  window.location.href = page;
+}

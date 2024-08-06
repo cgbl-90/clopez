@@ -22,8 +22,5 @@
   "bugs": {
     "url": "https://github.com/cgbl-90/clopez/issues"
   },
-  "homepage": "https://github.com/cgbl-90/clopez#readme",
-  "dependencies": {
-    "marked": "^13.0.3"
-  }
+  "homepage": "https://github.com/cgbl-90/clopez#readme"
 }

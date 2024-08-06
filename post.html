@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="sass/reset.css">
     <link rel="stylesheet" href="sass/index.css">
     <title>Carmen López — Blog Post</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
@@ -37,6 +36,22 @@
 
     <!-- Scripts -->
     <script src="js/index.js"></script>
+    <script>
+        // Load article content based on the ID passed in the URL
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('article');
+
+            if (articleId) {
+                fetch(`articles/${articleId}.html`)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('post-content').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading article:', error));
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Check if we are on the blog list page or the post page
   if (document.getElementById("blog-links")) {
     // Load all JSON files if the blog-links element exists
-    loadAllJsons("/articles/");
+    loadAllJsons("../articles/");
   } else if (document.getElementById("post-content")) {
     // Load a specific JSON post if post-content element exists
     const file = getUrlParameter("file");
@@ -128,34 +128,21 @@ async function loadJson(file, elementId = "post-content") {
 // Function to load all JSON files from a directory and generate links
 function loadAllJsons(directory) {
   console.log(`Fetching directory contents from: ${directory}`);
-  fetch(directory)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Failed to load directory: ${response.statusText}`);
-      }
-      return response.text();
-    })
-    .then((data) => {
-      // Parse the directory contents as HTML
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(data, "text/html");
-      const links = Array.from(doc.querySelectorAll("a")).filter((link) =>
-        link.href.endsWith(".json")
-      );
+  // List of JSON files to fetch
+  const jsonFiles = [
+    "article1.json",
+    "article2.json",
+    "article3.json",
+    "article4.json",
+    "article5.json",
+    "article6.json",
+  ];
 
-      if (links.length === 0) {
-        console.warn("No JSON files found in the directory.");
-      }
-
-      // Load each JSON file and process it
-      links.forEach((link) => {
-        loadJson(link.href, "blog-links");
-      });
-    })
-    .catch((err) => {
-      console.error("Error loading JSON directory:", err);
-      alert("Error loading JSON directory. Check console for details.");
-    });
+  // Load each JSON file and process it
+  jsonFiles.forEach((file) => {
+    const filePath = `${directory}${file}`;
+    loadJson(filePath, "blog-links");
+  });
 }
 
 // Function to get a URL parameter by name

@@ -10,10 +10,11 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  font-family: "Share Tech Mono", monospace;
+h6,
+p {
+  font-family: "Noto Sans Mono", monospace;
+  font-weight: 300;
   color: #333;
-  /* Improved text color for readability */
 }
 
 .container {
@@ -21,9 +22,6 @@ h6 {
   max-width: 1200px;
   min-height: 800px;
   margin: 10px auto;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .container.active {
@@ -63,12 +61,11 @@ h6 {
 
 .sidebar a:hover {
   background-color: #e7f1ff;
-  /* Light hover effect */
 }
 
 .sidebar img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -82,7 +79,6 @@ h6 {
   flex-wrap: wrap;
   justify-content: space-between;
   width: calc(100% - 80px);
-  /* Adjust width based on sidebar */
   margin-left: 80px;
   margin-top: 40px;
   padding: 20px;
@@ -112,23 +108,19 @@ h5 a:hover {
 
 h3 {
   font-size: 1.5rem;
-  /* Increased font size for better readability */
   line-height: 1.5;
   margin-bottom: 15px;
-  /* Add margin for better spacing */
 }
 
 h5 {
   font-size: 1rem;
-  font-weight: bold;
 }
 
 .badge {
   display: inline-block;
   padding: 10px 20px;
   font-size: 12px;
-  font-weight: bold;
-  border-radius: 20px;
+  border-radius: 5px;
   background-color: #007bff;
   color: #fff;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -164,7 +156,6 @@ h5 {
 
   h3 {
     font-size: 1.2rem;
-    /* Adjusted for smaller screens */
   }
 }
 
@@ -182,4 +173,73 @@ h5 {
     margin-left: 50px;
     width: calc(100% - 50px);
   }
+}
+
+hr {
+  border: none;
+  height: 3px;
+  width: 100px;
+  background-color: #e7f1ff;
+  margin: 20px 0;
+}
+
+button {
+  margin-top: 20px;
+  font-family: inherit;
+  background: linear-gradient(90deg, #84b3f5, #007bff);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #007bff;
+  box-shadow: 0 6px 8px rgba(0, 123, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid #FFF;
+  object-fit: cover;
+}
+
+.avatar-wrapper {
+  width: 207px;
+  height: 207px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 123, 255, 0.6);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #f0f4ff;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.box .icon {
+  margin-right: 10px;
 }

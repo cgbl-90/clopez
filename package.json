@@ -1,26 +1,23 @@
 {
   "name": "clopez",
-  "version": "1.0.2",
-  "description": "carmen l. | portfolio",
-  "main": "index.html",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cgbl-90/clopez.git"
-  },
-  "keywords": [
-    "frontend",
-    "development",
-    "portfolio",
-    "website"
-  ],
-  "author": "Carmen L.",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cgbl-90/clopez/issues"
-  },
-  "homepage": "https://github.com/cgbl-90/clopez#readme"
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/html": "^8.6.14",
+    "@storybook/html-vite": "^8.6.14",
+    "@storybook/test": "^8.6.14",
+    "storybook": "^8.6.14",
+    "vite": "^6.3.5"
+  }
 }

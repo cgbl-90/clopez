@@ -1,7 +1,13 @@
-# MY PERSONAL WEBSITE DESIGN
+# Carmen L. Portfolio Website
 
-This website was designed using Javascript, HTML, Saas CSS and Markdown
+https://cgbl-90.github.io/clopez/
+
+### Stack
+
+- HTML, CSS & JS
 
 ### About
 
-- Old versions of this website in branches: `version 1` & `version 2`.
+Old versions of this website in branches: 
+`version 1`, `version 2` & `version 3`
+

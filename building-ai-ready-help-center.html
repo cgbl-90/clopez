@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/bio.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Jura:wght@300..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Building an AI-ready Help Center | Carmen L.</title>
+</head>
+
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-wordmark">CARMEN LÓPEZ</span>
+        <span class="brand-tagline">Support Engineer</span>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">CV</a>
+        <span class="nav-divider">/</span>
+        <a href="ideas.html" class="nav-link nav-link--active">Ideas</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <h1>Building an AI-ready help center</h1>
+        <p class="article-meta">
+          Convert your docs into AI context and prevent hallucinations.
+        </p>
+        <br />
+        <br />
+        <p>
+          In the
+          <a href="four-eras-of-customer-support.html">Agentic Era</a>,
+          your documentation is no longer just a collection of articles; it is the structured data and context that
+          prevents your AI from hallucinating and ensures it can actually do the work.
+        </p>
+
+        <p>
+          Some companies are panicking and making their documentation private to stop AI models from training on it for
+          free. This is a strategic blunder for support. Why?
+        </p>
+        <p>
+          Many customers will not visit your website; they will send their own personal AI assistants to find answers
+          for them. If your documentation is gated, a customer's personal agent can't read your resolution paths. This
+          forces the customer to manually log in and search, creating immediate friction that leads to high-cost human
+          tickets.
+        </p>
+        <p>
+          Documentation is now trust infrastructure. When a machine can verify your facts, it recommends your brand.
+          Open docs make your product AI-addressable.
+        </p>
+
+        <p>
+          To make your help center usable via the Model Context Protocol (MCP), you need to follow these tactical
+          rules:
+        </p>
+
+        <h2>“One article, one question” rule</h2>
+        <p>
+          AI models perform significantly better when provided with optimized, focused contexts. Each article should
+          answer exactly one question (for example, “How do I reset my API key?”) to avoid context overload.
+        </p>
+
+        <h2>Semantic chunking</h2>
+        <p>
+          Structure your content so it can be broken into chunks of 100–300 tokens for speed or 500–1000 tokens for
+          accuracy. Ensure each chunk is self-contained so that, if it is retrieved alone, it still makes sense to the
+          AI.
+        </p>
+
+        <h2>Repeat context in the body</h2>
+        <p>
+          Don’t rely on the title alone. If the title is “How to process a refund,” repeat that key phrase in the first
+          paragraph. When an AI chunks your article, the title can get separated from the steps, making the steps
+          meaningless to the LLM.
+        </p>
+
+        <h2>Explicit definitions</h2>
+        <p>
+          Humans use intuition; AI uses explicit data. Stop using vague jargon. Use clear, imperative language (for
+          example, “Click the blue button” instead of “The user might find the submission option useful”).
+        </p>
+
+        <h2>Text-only fallbacks</h2>
+        <p>
+          AI agents primarily read. Ensure there is a text-only version of every diagram, video, or image, as non-text
+          content will not be indexed by most retrieval-augmented generation (RAG) systems.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <h1>Get in touch</h1>
+      <p>Ready to create exceptional customer experiences together?</p>
+      <p><a href="mailto:carmenbaez2000@gmail.com">Say hello at carmenbaez2000@gmail.com</a></p>
+      <br />
+      <br />
+      <br />
+    </footer>
+  </div>
+</body>
+
+</html>
+

@@ -77,6 +77,10 @@ h6 {
   font-weight: 400;
 }
 
+h7 {
+  font-size: 0.7rem;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -90,6 +94,11 @@ ul {
   max-width: 800px;
   background: #f6f2ed;
   padding: 1.75rem 1.5rem 2.5rem;
+  min-height: 1000px;
+}
+
+.page main {
+  margin: 0.75rem 0 1.5rem;
 }
 
 .max-screen {
@@ -207,6 +216,15 @@ ul {
   height: 20px;
 }
 
+.contact-row a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  text-decoration: none;
+}
+
 /* Skills */
 
 .badge-grid {
@@ -221,7 +239,7 @@ ul {
   font-size: 0.75rem;
   line-height: 1.4;
   border-radius: 999px;
-  color: #061329;
+  color: hsl(218, 74%, 9%);
   background: #f7dccd;
   letter-spacing: 0.04em;
 }
@@ -269,13 +287,80 @@ ul {
   margin-top: 0.5rem;
 }
 
+/* Home accordions */
+
+.accordion {
+  border-radius: 1.25rem;
+  background: #f9f6f1;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion-summary::-webkit-details-marker,
+.accordion-summary::marker {
+  display: none;
+}
+
+.accordion-panel {
+  padding-inline: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.accordion .section-title {
+  margin-bottom: 0;
+}
+
+.accordion-toggle {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: #eeebe7;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.accordion-toggle::before,
+.accordion-toggle::after {
+  content: "";
+  position: absolute;
+  background: #17110e;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.accordion-toggle::before {
+  width: 10px;
+  height: 1px;
+}
+
+.accordion-toggle::after {
+  width: 1px;
+  height: 10px;
+}
+
+.accordion[open] .accordion-toggle::after {
+  height: 0;
+}
+
 /* Footer */
 
 .site-footer {
   padding-top: 1.5rem;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .site-footer h1 {
@@ -300,46 +385,20 @@ ul {
 .article-card {
   border-radius: 1.1rem;
   background: #f9f6f1;
-  padding: 0;
+  padding: 1.1rem 1.1rem 1.2rem;
   border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.15s ease-out;
 }
 
-.article-card summary {
-  display: block;
-  cursor: pointer;
-  padding: 1.1rem 1.1rem 1rem;
-  list-style: none;
+.article-card:hover {
+  background: #f2ebe1;
+  border-color: #f3c4a8;
+  transform: translateY(-1px);
 }
 
-.article-card summary::-webkit-details-marker,
-.article-card summary::marker {
-  display: none;
-}
-
-.article-card summary::after {
-  content: "+";
-  float: right;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  font-size: 1.1rem;
-  font-weight: 300;
-  line-height: 1;
-  color: #201818;
-  background: rgba(0, 0, 0, 0.06);
-  border-radius: 50%;
-}
-
-.article-card[open] summary::after {
-  content: "−";
-  background: rgba(0, 0, 0, 0.08);
-}
-
-.article-card .article-content {
-  padding: 0 1.1rem 1.2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+.article-card:active {
+  background: #c5cff4;
+  border-color: #c5cff4;
 }
 
 .article-card h3 {
@@ -350,7 +409,24 @@ ul {
 .article-meta {
   font-size: 0.85rem;
   opacity: 0.8;
-  margin-bottom: 0;
+  margin-bottom: 0.25rem;
+}
+
+.article-card a {
+  display: block;
+  text-decoration: none;
+}
+
+.article-card a span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+}
+
+.article-card a span::after {
+  content: "→";
+  font-size: 0.9rem;
 }
 
 /* Tablet breakpoint */
@@ -367,5 +443,50 @@ ul {
   h1 {
     font-size: 2.1rem;
   }
+}
+
+/* Article formatting helpers (markdown -> HTML) */
+.section hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 1rem 0 1.1rem;
+}
+
+.section blockquote {
+  margin: 0.75rem 0 1rem;
+  padding: 0.75rem 0.85rem;
+  border-left: 3px solid rgba(0, 0, 0, 0.18);
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 0.6rem;
+}
+
+.section ul,
+.section ol {
+  padding-left: 1.1rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.section li {
+  margin-bottom: 0.4rem;
+}
+
+.section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+.section th,
+.section td {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.6rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.section th {
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.02);
 }
 

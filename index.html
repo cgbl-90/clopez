@@ -29,6 +29,7 @@
         </nav>
       </header>
 
+      <main>
       <section class="hero">
         <figure class="hero-photo">
           <img src="public/carmen-1.png" alt="Portrait of Carmen López" />
@@ -60,11 +61,13 @@
           </a>
         </div>
       </section>
-
-    <section class="section">
-      <h2 class="section-title">Skills & stack</h2>
-      <br />
-      <br />
+    <br />
+    <details class="accordion" aria-label="Skills and stack">
+      <summary class="accordion-summary">
+        <h2 class="section-title">Skills &amp; stack</h2>
+        <span class="accordion-toggle" aria-hidden="true"></span>
+      </summary>
+      <section class="section accordion-panel">
       <span>
         <p class="badge">React</p>
         <p class="badge">Visual Testing</p>
@@ -107,11 +110,14 @@
         <p class="badge">Cypress</p>
       </span>
     </section>
+    </details>
 
-    <section class="section">
-      <h2 class="section-title">Experience</h2>
-      <br />
-      <br />
+    <details class="accordion" aria-label="Experience">
+      <summary class="accordion-summary">
+        <h2 class="section-title">Experience</h2>
+        <span class="accordion-toggle" aria-hidden="true"></span>
+      </summary>
+      <section class="section accordion-panel">
 
       <div class="card">
         <h3><strong>SENIOR SUPPORT ENGINEER</strong></h3>
@@ -188,11 +194,14 @@
       </div>
 
     </section>
+    </details>
 
-    <section class="section">
-      <h2 class="section-title">Education</h2>
-      <br />
-      <br />
+    <details class="accordion" aria-label="Education">
+      <summary class="accordion-summary">
+        <h2 class="section-title">Education</h2>
+        <span class="accordion-toggle" aria-hidden="true"></span>
+      </summary>
+      <section class="section accordion-panel">
       <div class="card">
         <span>
           <h4>MA in Innovation in Customer Experience, <strong>UNIR</strong></h4>
@@ -246,11 +255,14 @@
         </span>
       </div>
     </section>
+    </details>
 
-    <section class="section">
-      <h2 class="section-title">About me</h2>
-      <br />
-      <br />
+    <details class="accordion" aria-label="About me" open>
+      <summary class="accordion-summary">
+        <h2 class="section-title">About me</h2>
+        <span class="accordion-toggle" aria-hidden="true"></span>
+      </summary>
+      <section class="section accordion-panel">
       <h4>
         For more than <strong>10 years</strong>, I've built my career at the intersection of technology and the people
         it serves. This passion led me to earn a <strong>Master's in Customer Experience Innovation</strong>, which
@@ -264,11 +276,17 @@
 
       </h4>
     </section>
+    </details>
+
+      </main>
 
     <footer class="site-footer">
       <h1>Get in touch</h1>
       <p>Ready to create exceptional customer experiences together?</p>
       <p><a href="mailto:carmenbaez2000@gmail.com">Say hello at carmenbaez2000@gmail.com</a></p>
+      <br />
+      <br />
+      <br />
     </footer>
     </div>
   </div>

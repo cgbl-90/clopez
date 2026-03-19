@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/bio.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Jura:wght@300..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Diseñar un "SKILL" para agentes de IA | Carmen L.</title>
+</head>
+
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-wordmark">CARMEN LÓPEZ</span>
+        <span class="brand-tagline">Support Engineer</span>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">CV</a>
+        <span class="nav-divider">/</span>
+        <a href="ideas.html" class="nav-link nav-link--active">Ideas</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <h1>Diseñar un "SKILL" para agentes de IA</h1>
+        <p class="article-meta">
+          Un <strong>skill</strong> (o habilidad) no es simplemente un <em>prompt</em> extenso; es una unidad de trabajo
+          estructurada y lógica. Define el comportamiento, las herramientas y el formato de salida de un agente
+          para convertirlo en un activo operativo real.
+        </p>
+
+        <hr />
+
+        <p>
+          Imagina que gestionas un e-commerce: un Skill bien diseñado transforma un ticket de soporte caótico en un
+          informe técnico listo para ejecutar. A continuación, desglosamos la anatomía de un Skill profesional
+          utilizando como ejemplo la <strong>"Resolución de Incidencias de Pedidos No Entregados"</strong>.
+        </p>
+
+        <h3>1. Definición de Rol y Contexto</h3>
+        <p>
+          La IA requiere un marco de referencia jerárquico. El rol dicta no solo el tono, sino la <strong>prioridad de los KPIs</strong>
+          (ej. priorizar la precisión logística sobre la persuasión de ventas).
+        </p>
+        <blockquote>
+          <p>
+            <strong>Ejemplo:</strong> "Actúa como Especialista de Operaciones Senior en 'TiendaFlash'. Tu objetivo
+            es auditar discrepancias de entrega y preparar resoluciones técnicas para el equipo de almacén."
+          </p>
+        </blockquote>
+
+        <h3>2. Gatillos de Activación (Trigger Points)</h3>
+        <p>
+          Para evitar que la IA alucine o intente aplicar procesos erróneos a consultas generales (como dudas de tallas),
+          debemos definir los límites de activación.
+        </p>
+        <ul>
+          <li><strong>Cuándo activar:</strong> El cliente reclama un estado de "Entregado" no recibido o el tracking está estancado por más de 48 horas.</li>
+          <li><strong>Cuándo ignorar:</strong> Consultas sobre especificaciones de producto o cambios de opinión post-compra.</li>
+        </ul>
+
+        <h3>3. Integración de Herramientas (Protocolo MCP)</h3>
+        <p>
+          Un Skill sin datos en tiempo real es pura teoría. El <strong>Model Context Protocol (MCP)</strong> permite que la IA "actúe"
+          y valide hechos antes de emitir un juicio.
+        </p>
+        <ul>
+          <li><strong>Shopify MCP:</strong> Extrae el historial de pagos y estados de cumplimiento.</li>
+          <li><strong>Logística API (FedEx/DHL):</strong> Consulta el último evento de rastreo real y coordenadas GPS.</li>
+          <li><strong>Zendesk MCP:</strong> Recupera el historial de interacciones previas para detectar reincidencias.</li>
+        </ul>
+
+        <h3>4. Gestión del Contexto y Privacidad (Sanitización PII)</h3>
+        <p>
+          El <strong>Contexto</strong> es el conjunto de datos específicos que rodean un problema. Sin embargo, en regiones con regulaciones estrictas
+          (como el <strong>GDPR</strong> en la UE), es vital añadir una capa de protección de datos.
+        </p>
+        <ul>
+          <li><strong>Instrucción de Privacidad:</strong> "Antes de procesar la lógica, anonimiza los datos: reemplaza nombres por 'El Cliente' y utiliza solo el código postal para validaciones geográficas."</li>
+        </ul>
+
+        <h3>5. Razonamiento y Planificación (Chain of Thought)</h3>
+        <p>
+          Es crucial pedirle a la IA que <strong>planee antes de ejecutar</strong>. Esto reduce errores lógicos y asegura que no se salte
+          validaciones críticas (como verificar el pago antes de aprobar un reenvío).
+        </p>
+        <p>
+          <strong>Por qué es importante:</strong> Obligar a la IA a escribir sus "Pensamientos" internos permite que el sistema analice la coherencia del plan antes
+          de que este afecte al cliente final.
+        </p>
+
+        <h3>6. Instrucciones de Proceso (Algoritmo en Lenguaje Natural)</h3>
+        <p>Esta es la secuencia lógica que debe seguir el agente.</p>
+        <ol>
+          <li><strong>Analizar:</strong> Lee el mensaje del cliente e identifica el sentimiento y la urgencia.</li>
+          <li><strong>Validar:</strong> Compara la dirección de la orden contra la firma digital de la transportadora.</li>
+          <li><strong>Detectar:</strong> Busca discrepancias (ej. "Entregado en buzón" cuando el paquete requiere firma).</li>
+        </ol>
+
+        <h3>7. Plantillas de Salida (Output Estructurado)</h3>
+        <p>
+          La consistencia permite que otros sistemas o humanos procesen la información sin fricción. Define formatos claros.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Campo</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ID del Ticket</strong></td>
+              <td>Referencia única del caso.</td>
+            </tr>
+            <tr>
+              <td><strong>Estado Logístico</strong></td>
+              <td>Situación real detectada en la API.</td>
+            </tr>
+            <tr>
+              <td><strong>Acción Recomendada</strong></td>
+              <td>Reembolso, Reenvío o Reclamación a Terceros.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Escribir un skill es, en esencia, <strong>programar en lenguaje natural</strong>. Al definir estas secciones, transformas una IA genérica
+          en un empleado experto que conoce tus herramientas, respeta la privacidad y entrega resultados listos para la acción.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <h1>Get in touch</h1>
+      <p>Ready to create exceptional customer experiences together?</p>
+      <p><a href="mailto:carmenbaez2000@gmail.com">Say hello at carmenbaez2000@gmail.com</a></p>
+    </footer>
+  </div>
+</body>
+
+</html>
+

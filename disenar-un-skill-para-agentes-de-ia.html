@@ -41,14 +41,14 @@
 
         <p>
           Imagina que gestionas un e-commerce: un Skill bien diseñado transforma un ticket de soporte caótico en un
-          informe técnico listo para ejecutar. A continuación, desglosamos la anatomía de un Skill profesional
-          utilizando como ejemplo la <strong>"Resolución de Incidencias de Pedidos No Entregados"</strong>.
+          informe técnico listo para ejecutar. A continuación, desglosamos la anatomía de un skill profesional
+          utilizando como ejemplo la <i>"Resolución de incidencias de pedidos no entregados"</i>.
         </p>
-
+        <br />
         <h3>1. Definición de Rol y Contexto</h3>
         <p>
-          La IA requiere un marco de referencia jerárquico. El rol dicta no solo el tono, sino la <strong>prioridad de los KPIs</strong>
-          (ej. priorizar la precisión logística sobre la persuasión de ventas).
+          La IA requiere un marco de referencia jerárquico. El rol dicta no solo el tono, sino la <strong>prioridad de
+            los KPIs</strong> (ej. priorizar la precisión logística sobre la persuasión de ventas).
         </p>
         <blockquote>
           <p>
@@ -56,58 +56,71 @@
             es auditar discrepancias de entrega y preparar resoluciones técnicas para el equipo de almacén."
           </p>
         </blockquote>
-
+        <br />
         <h3>2. Gatillos de Activación (Trigger Points)</h3>
         <p>
-          Para evitar que la IA alucine o intente aplicar procesos erróneos a consultas generales (como dudas de tallas),
-          debemos definir los límites de activación.
+          Para evitar que la IA alucine o intente aplicar procesos erróneos a consultas generales (como dudas de
+          tallas), debemos definir los límites de activación.
         </p>
         <ul>
-          <li><strong>Cuándo activar:</strong> El cliente reclama un estado de "Entregado" no recibido o el tracking está estancado por más de 48 horas.</li>
-          <li><strong>Cuándo ignorar:</strong> Consultas sobre especificaciones de producto o cambios de opinión post-compra.</li>
+          <li><strong>¿Cuándo activar:?</strong> El cliente reclama un estado de <i>"entregado"</i> no recibido o el
+            tracking está estancado por más de 48 horas.</li>
+          <li><strong>¿Cuándo ignorar:?</strong> Consultas sobre especificaciones de producto o cambios de opinión
+            post-compra.</li>
         </ul>
-
+        <br />
         <h3>3. Integración de Herramientas (Protocolo MCP)</h3>
         <p>
-          Un Skill sin datos en tiempo real es pura teoría. El <strong>Model Context Protocol (MCP)</strong> permite que la IA "actúe"
-          y valide hechos antes de emitir un juicio.
+          Un skill sin datos en tiempo real es pura teoría. El <strong>Model Context Protocol (MCP)</strong> permite que
+          la IA "actúe" y valide hechos antes de emitir un juicio. ¿Con cuáles servicios debe interactuar para resolver
+          el caso?
         </p>
         <ul>
           <li><strong>Shopify MCP:</strong> Extrae el historial de pagos y estados de cumplimiento.</li>
-          <li><strong>Logística API (FedEx/DHL):</strong> Consulta el último evento de rastreo real y coordenadas GPS.</li>
-          <li><strong>Zendesk MCP:</strong> Recupera el historial de interacciones previas para detectar reincidencias.</li>
+          <li><strong>Logística API (FedEx/DHL):</strong> Consulta el último evento de rastreo real y coordenadas GPS.
+          </li>
+          <li><strong>Zendesk MCP:</strong> Recupera el historial de interacciones previas para detectar reincidencias.
+          </li>
         </ul>
-
-        <h3>4. Gestión del Contexto y Privacidad (Sanitización PII)</h3>
+        <br />
+        <h3>4. Gestión del Contexto y privacidad</h3>
         <p>
-          El <strong>Contexto</strong> es el conjunto de datos específicos que rodean un problema. Sin embargo, en regiones con regulaciones estrictas
-          (como el <strong>GDPR</strong> en la UE), es vital añadir una capa de protección de datos.
+          El <strong>Contexto</strong> es el conjunto de datos específicos que rodean un problema. Sin embargo, en
+          regiones con regulaciones estrictas (como el <strong>GDPR</strong> en la UE), es vital añadir una capa de
+          protección de datos.
         </p>
         <ul>
-          <li><strong>Instrucción de Privacidad:</strong> "Antes de procesar la lógica, anonimiza los datos: reemplaza nombres por 'El Cliente' y utiliza solo el código postal para validaciones geográficas."</li>
+          <li><strong>Instrucción de Privacidad:</strong> "Antes de procesar la lógica, anonimiza los datos: reemplaza
+            nombres por 'El Cliente' y utiliza solo el código postal para validaciones geográficas."</li>
         </ul>
+        <br />
 
-        <h3>5. Razonamiento y Planificación (Chain of Thought)</h3>
+        <h3>5. Razonamiento y planificación (Chain of Thought)</h3>
         <p>
-          Es crucial pedirle a la IA que <strong>planee antes de ejecutar</strong>. Esto reduce errores lógicos y asegura que no se salte
-          validaciones críticas (como verificar el pago antes de aprobar un reenvío).
+          Es crucial pedirle a la IA que <strong>planee antes de ejecutar</strong>. Esto reduce errores lógicos y
+          asegura que no se salte validaciones críticas (como verificar el pago antes de aprobar un reenvío).
         </p>
         <p>
-          <strong>Por qué es importante:</strong> Obligar a la IA a escribir sus "Pensamientos" internos permite que el sistema analice la coherencia del plan antes
-          de que este afecte al cliente final.
+          <strong>¿Por qué es importante?</strong> Obliga a la IA a escribir sus "pensamientos" internos permite que el
+          sistema analice la coherencia del plan antes de que este afecte al cliente final.
         </p>
+        <br />
 
-        <h3>6. Instrucciones de Proceso (Algoritmo en Lenguaje Natural)</h3>
+        <h3>6. Instrucciones de proceso (Algoritmo en lenguaje natural)</h3>
         <p>Esta es la secuencia lógica que debe seguir el agente.</p>
         <ol>
           <li><strong>Analizar:</strong> Lee el mensaje del cliente e identifica el sentimiento y la urgencia.</li>
-          <li><strong>Validar:</strong> Compara la dirección de la orden contra la firma digital de la transportadora.</li>
-          <li><strong>Detectar:</strong> Busca discrepancias (ej. "Entregado en buzón" cuando el paquete requiere firma).</li>
+          <li><strong>Validar:</strong> Compara la dirección de la orden contra la firma digital de la transportadora.
+          </li>
+          <li><strong>Detectar:</strong> Busca discrepancias (ej. "Entregado en buzón" cuando el paquete requiere
+            firma).</li>
         </ol>
-
-        <h3>7. Plantillas de Salida (Output Estructurado)</h3>
+        <br />
+        <h3>7. Plantillas de Salida</h3>
         <p>
-          La consistencia permite que otros sistemas o humanos procesen la información sin fricción. Define formatos claros.
+          La consistencia permite que otros sistemas o humanos procesen la información sin fricción. Define formatos
+          claros para el resultado final, como JSON o tablas, con campos específicos que la IA debe completar. Esto es
+          especialmente útil para alimentar dashboards de monitoreo o sistemas de tickets con información estructurada.
         </p>
 
         <table>
@@ -132,10 +145,13 @@
             </tr>
           </tbody>
         </table>
-
+        <br />
+        <br />
         <p>
-          Escribir un skill es, en esencia, <strong>programar en lenguaje natural</strong>. Al definir estas secciones, transformas una IA genérica
-          en un empleado experto que conoce tus herramientas, respeta la privacidad y entrega resultados listos para la acción.
+          Escribir un skill es, en esencia, <strong>programar en lenguaje natural</strong>. Al definir estas secciones,
+          transformas una IA genérica
+          en un empleado experto que conoce tus herramientas, respeta la privacidad y entrega resultados listos para la
+          acción.
         </p>
       </section>
     </main>
@@ -149,4 +165,3 @@
 </body>
 
 </html>
-

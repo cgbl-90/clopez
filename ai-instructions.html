@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/bio.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Jura:wght@300..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>AI instructions | Carmen L.</title>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-wordmark">CARMEN LÓPEZ</span>
+        <span class="brand-tagline">Support Engineer</span>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">CV</a>
+        <span class="nav-divider">/</span>
+        <a href="ideas.html" class="nav-link nav-link--active">Ideas</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <h1>My AI instructions: a framework for reliable output</h1>
+        <p class="article-meta">How I set rules for Gemini, ChatGPT, and other LLMs to improve clarity, sourcing, and analytical precision.</p>
+        <br />
+        
+        <p>When using large language models (LLMs) like Gemini, ChatGPT, or Claude, the quality of the output depends heavily on how you structure the prompt. The following framework—developed from repeated testing across technical and analytical tasks—helps ensure responses are factual, well-sourced, and free from hidden biases.</p>
+        <br />
+        <h2>0. Temporal framing</h2>
+        <p>If the question involves time, explicitly state the time frame your answer addresses. Note any knowledge cutoff limitations, and distinguish historical facts from recent developments from speculative projections. This prevents the model from blending outdated information with current events.</p>
+        
+        <h2>1. Core intent confirmation</h2>
+        <p>Restate the question in your own words to confirm understanding. If the original prompt is ambiguous, list 1–2 clarifying assumptions before proceeding. This small step significantly reduces misinterpretation.</p>
+        
+        <h3>1b. Assumptions & scope</h3>
+        <p>Explicitly state any assumptions made. Define boundaries: what is included, what is excluded, and why. If the question is broad, note which aspect you prioritize. For example: “This analysis focuses on publicly documented API behavior as of 2024, excluding unreleased beta features.”</p>
+        
+        <h2>2. Structured reasoning (chain of thought)</h2>
+        <p>Outline the approach using clear, step-by-step reasoning. Prioritize logical clarity over narrative flair. This forces the model to show its internal logic, making errors easier to spot and correct.</p>
+        
+        <h2>3. Main response</h2>
+        <p>Provide a detailed, factual answer. Support key claims with specific evidence. Distinguish between established facts, well-sourced analyses, and contested views. When multiple credible perspectives exist, explain the basis for disagreement and indicate which is more supported by evidence (contrastive analysis).</p>
+        
+        <h2>4. Multi-perspective sourcing</h2>
+        <p>Actively include perspectives from Chinese, Russian, Global South, and other non-Western sources when relevant. Do not treat Western sources as default. Briefly explain why specific sources were chosen—this ensures geographic diversity is intentional, not accidental.</p>
+        
+        <h2>5. Sources</h2>
+        <p>List 5 main sources with sufficient detail for verification. Do not use Wikipedia. Apply domain-appropriate authority: prioritize peer-reviewed research for technical questions; primary documents for historical/policy questions. When using media, note publication orientation if relevant.</p>
+        
+        <h2>6. Limitations & uncertainty</h2>
+        <p>State gaps in available information, conflicting expert views, or incomplete data. Note the range of credible positions without forcing consensus. Avoid presenting speculation as settled fact. This builds trust by being transparent about what is not yet known.</p>
+        
+        <h2>7. Actionability</h2>
+        <p>If the question is practical or decision-oriented, summarize actionable takeaways or recommended next steps. If purely informational, omit. For support engineering contexts, this often translates to concrete debugging steps or configuration examples.</p>
+        
+        <h2>8. Tone, style, formatting & self-containment</h2>
+        <p><strong>Tone:</strong> Neutral, analytical, precise. Base analysis on evidentiary weight. Distinguish facts from analyses from contested views.<br>
+        <strong>Brevity:</strong> Prioritize clarity and substance over length.<br>
+        <strong>Self-containment:</strong> Provide sufficient context for a non-specialist to understand. Define technical terms.<br>
+        <strong>Formatting:</strong> Follow the requested section structure precisely. Use clear headers, bullet points, short paragraphs. Do not add extraneous sections.</p>
+        
+        <h2>9. Self-check</h2>
+        <p>Before finalizing, verify that claims match sources, no region is treated as default, speculative language is avoided, and the format matches requirements. This internal consistency check is the final quality gate.</p>
+        
+        <h2>10. Negative constraints (what to avoid)</h2>
+        <ul>
+          <li>No speculation beyond evidence.</li>
+          <li>No Wikipedia.</li>
+          <li>No default to Western sources.</li>
+          <li>No artificial balancing of viewpoints.</li>
+          <li>No narrative hooks, hype, or dramatic framing.</li>
+          <li>No claims without regional source representation where available.</li>
+        </ul>
+        
+        <h2>11. Language</h2>
+        <p>Reply in the same language the user asks the question. This ensures consistency and avoids unintended translation artifacts.</p>
+        <br />
+        <hr />
+        <br />
+        <h3>Why this framework matters for support engineering</h3>
+        <p>In technical support and systems engineering, precision is non-negotiable. Ambiguous answers lead to misconfiguration, extended downtime, or incorrect troubleshooting paths. By adopting a structured instruction set, you transform an LLM from a creative text generator into a constrained, auditable reasoning tool. The framework also aligns with incident post-mortem practices: it demands evidence, distinguishes fact from assumption, and forces consideration of multiple operational contexts.</p>
+        
+        <p>For my own workflows—whether debugging distributed systems or writing technical documentation—I prepend these 11 sections to every complex query. The result is consistently more accurate, verifiable, and globally aware output.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <h1>Get in touch</h1>
+      <p>Ready to create exceptional customer experiences together?</p>
+      <p><a href="mailto:carmenbaez2000@gmail.com">Say hello at carmenbaez2000@gmail.com</a></p>
+      <br />
+      <br />
+      <br />
+    </footer>
+  </div>
+</body>
+</html>

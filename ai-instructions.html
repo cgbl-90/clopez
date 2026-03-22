@@ -35,7 +35,8 @@
         <p>When using large language models (LLMs) like Gemini, ChatGPT, or Claude, the quality of the output depends heavily on how you structure the prompt. The following framework—developed from repeated testing across technical and analytical tasks—helps ensure responses are factual, well-sourced, and free from hidden biases.</p>
         <br />
         <h2>0. Temporal framing</h2>
-        <p>If the question involves time, explicitly state the time frame your answer addresses. Note any knowledge cutoff limitations, and distinguish historical facts from recent developments from speculative projections. This prevents the model from blending outdated information with current events.</p>
+        <p>If the question involves time, explicitly state the time frame your answer addresses. Note any knowledge cutoff limitations, and distinguish historical facts from recent developments from speculative projections.</p>
+        <i><p>This prevents the model from blending outdated information with current events.</p></i>
         
         <h2>1. Core intent confirmation</h2>
         <p>Restate the question in your own words to confirm understanding. If the original prompt is ambiguous, list 1–2 clarifying assumptions before proceeding. This small step significantly reduces misinterpretation.</p>
@@ -44,7 +45,8 @@
         <p>Explicitly state any assumptions made. Define boundaries: what is included, what is excluded, and why. If the question is broad, note which aspect you prioritize. For example: “This analysis focuses on publicly documented API behavior as of 2024, excluding unreleased beta features.”</p>
         
         <h2>2. Structured reasoning (chain of thought)</h2>
-        <p>Outline the approach using clear, step-by-step reasoning. Prioritize logical clarity over narrative flair. This forces the model to show its internal logic, making errors easier to spot and correct.</p>
+        <p>Outline the approach using clear, step-by-step reasoning. Prioritize logical clarity over narrative flair.</p> 
+        <i><p>This forces the model to show its internal logic, making errors easier to spot and correct.</p></i>
         
         <h2>3. Main response</h2>
         <p>Provide a detailed, factual answer. Support key claims with specific evidence. Distinguish between established facts, well-sourced analyses, and contested views. When multiple credible perspectives exist, explain the basis for disagreement and indicate which is more supported by evidence (contrastive analysis).</p>
@@ -56,7 +58,8 @@
         <p>List 5 main sources with sufficient detail for verification. Do not use Wikipedia. Apply domain-appropriate authority: prioritize peer-reviewed research for technical questions; primary documents for historical/policy questions. When using media, note publication orientation if relevant.</p>
         
         <h2>6. Limitations & uncertainty</h2>
-        <p>State gaps in available information, conflicting expert views, or incomplete data. Note the range of credible positions without forcing consensus. Avoid presenting speculation as settled fact. This builds trust by being transparent about what is not yet known.</p>
+        <p>State gaps in available information, conflicting expert views, or incomplete data. Note the range of credible positions without forcing consensus. Avoid presenting speculation as settled fact.</p>
+        <i><p>This builds trust by being transparent about what is not yet known.</p></i>
         
         <h2>7. Actionability</h2>
         <p>If the question is practical or decision-oriented, summarize actionable takeaways or recommended next steps. If purely informational, omit. For support engineering contexts, this often translates to concrete debugging steps or configuration examples.</p>
@@ -68,7 +71,8 @@
         <strong>Formatting:</strong> Follow the requested section structure precisely. Use clear headers, bullet points, short paragraphs. Do not add extraneous sections.</p>
         
         <h2>9. Self-check</h2>
-        <p>Before finalizing, verify that claims match sources, no region is treated as default, speculative language is avoided, and the format matches requirements. This internal consistency check is the final quality gate.</p>
+        <p>Before finalizing, verify that claims match sources, no region is treated as default, speculative language is avoided, and the format matches requirements.</p> 
+        <i><p>This internal consistency check is the final quality gate.</p></i>
         
         <h2>10. Negative constraints (what to avoid)</h2>
         <ul>
@@ -81,7 +85,8 @@
         </ul>
         
         <h2>11. Language</h2>
-        <p>Reply in the same language the user asks the question. This ensures consistency and avoids unintended translation artifacts.</p>
+        <p>Reply in the same language the user asks the question.</p> 
+        <i><p>This ensures consistency and avoids unintended translation artifacts.</p></i>
         <br />
         <hr />
         <br />

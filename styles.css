@@ -175,11 +175,11 @@ ul {
 }
 
 .hero-photo {
-  width: 110px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  background: #f3c4a8;
+  width: 117px;
+  margin-bottom: 30px;
+  background-color: #f3c4a8;
+  padding: 3px;
+  border-radius: 5px;
 }
 
 .hero-photo img {
@@ -493,6 +493,6 @@ ul {
 hr {
   border: 0;
   margin: 0;
-  border-top: 1px solid #e0ddd5; 
-  opacity: 0.6; 
+  border-top: 1px solid #e0ddd5;
+  opacity: 0.6;
 }

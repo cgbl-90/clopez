@@ -11,7 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Jura:wght@300..700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <title>Building an AI-ready Help Center | Carmen L.</title>
+  <title>Building an AI-ready help center | Carmen L.</title>
 </head>
 
 <body>
@@ -31,71 +31,59 @@
     <main>
       <section class="section">
         <h1>Building an AI-ready help center</h1>
-        <p class="article-meta">
-          Convert your docs into AI context and prevent hallucinations.
-        </p>
+        <p class="article-meta">Convert your docs into AI context and prevent hallucinations.</p>
         <br />
         <br />
         <p>
-          In the
-          <a href="four-eras-of-customer-support.html">Agentic Era</a>,
-          your documentation is no longer just a collection of articles; it is the structured data and context that
-          prevents your AI from hallucinating and ensures it can actually do the work.
-        </p>
-
-        <p>
-          Some companies are panicking and making their documentation private to stop AI models from training on it for
-          free. This is a strategic blunder for support. Why?
-        </p>
-        <p>
-          Many customers will not visit your website; they will send their own personal AI assistants to find answers
-          for them. If your documentation is gated, a customer's personal agent can't read your resolution paths. This
-          forces the customer to manually log in and search, creating immediate friction that leads to high-cost human
-          tickets.
-        </p>
-        <p>
-          Documentation is now trust infrastructure. When a machine can verify your facts, it recommends your brand.
-          Open docs make your product AI-addressable.
-        </p>
-
-        <p>
-          To make your help center usable via the <strong>Model Context Protocol (MCP)</strong>, you need to follow
-          these tactical
-          rules:
+          In the <a href="four-eras-of-customer-support.html">Agentic Era</a>, documentation is no longer just for
+          humans; it is the trust infrastructure that makes your
+          product AI-addressable. To ensure AI agents and Retrieval-Augmented Generation (RAG) systems can navigate your
+          content without friction, you must implement a machine-readable map of your knowledge base.
         </p>
         <br />
-
-        <h2>“One article, one question” rule</h2>
+        <h2>The llms.txt Standard</h2>
         <p>
-          AI models perform significantly better when provided with optimized, focused contexts. Each article should
-          answer exactly one question (for example, “<i>How do I reset my API key?</i>”) to avoid context overload.
+          The <code>llms.txt</code> file is a Markdown-formatted map placed at your domain's root to serve as a
+          high-signal entry point for AI crawlers.
         </p>
-
-        <h2>Semantic chunking</h2>
+        <ul>
+          <li><strong>Header:</strong> Provides a brief summary of the documentation's purpose.</li>
+          <li><strong>Core Section:</strong> Points to essential "Getting Started" or introductory articles.</li>
+          <li><strong>Navigation Section:</strong> Lists URLs with brief, descriptive text to help an LLM's attention
+            mechanism identify relevance.</li>
+          <li><strong>Appendix:</strong> Links to detailed technical data like API references or changelogs.</li>
+        </ul>
+        <br />
+        <h2>Technical Map Structure (Markdown Manifest)</h2>
         <p>
-          Structure your content so it can be broken into chunks of 100–300 tokens for speed or 500–1000 tokens for
-          accuracy. Ensure each chunk is self-contained so that, if it is retrieved alone, it still makes sense to the
-          AI.
+          While JSON is common for data, LLMs process Markdown manifests more efficiently due to lower token overhead.
         </p>
-
-        <h2>Repeat context in the body</h2>
+        <ul>
+          <li><strong>Strict Hierarchy:</strong> Use consistent heading levels to help the AI understand parent-child
+            relationships between topics.</li>
+          <li><strong>Canonical Paths:</strong> Explicitly define the latest versions of pages to prevent the AI from
+            retrieving outdated instructions.</li>
+          <li><strong>Semantic Discovery:</strong> Include one-sentence descriptions for each link instead of just
+            listing titles.</li>
+        </ul>
+        <br />
+        <h2>Tactical Mapping Best Practices</h2>
         <p>
-          Don’t rely on the title alone. If the title is <i>“How to process a refund”</i>, repeat that key phrase in the
-          first paragraph. When an AI chunks your article, the title can get separated from the steps, making the steps
-          meaningless to the LLM.
+          A map is only as good as the destinations it leads to. Follow these rules to ensure your articles are
+          "AI-ready":
         </p>
-
-        <h2>Explicit definitions</h2>
-        <p>
-          Humans use intuition; AI uses explicit data. Stop using vague jargon. Use clear, imperative language (for
-          example, <i>“Click the blue button”</i> instead of <i>“The user might find the submission option useful”</i>).
-        </p>
-
-        <h2>Text-only fallbacks</h2>
-        <p>
-          AI agents primarily read. Ensure there is a text-only version of every diagram, video, or image, as non-text
-          content will not be indexed by most <strong>retrieval-augmented generation (RAG) systems</strong>.
-        </p>
+        <ul>
+          <li><strong>One article, one question:</strong> Map links to focused articles that answer exactly one question
+            to avoid context overload.</li>
+          <li><strong>Semantic chunking:</strong> Structure content into self-contained blocks of 100–300 or 500–1000
+            tokens.</li>
+          <li><strong>Repeat context:</strong> Ensure the destination page repeats the key topic in the first paragraph
+            so the context survives if the chunk is separated from the title.</li>
+          <li><strong>Explicit language:</strong> Use clear, imperative language rather than vague jargon (e.g., "Click
+            the blue button").</li>
+          <li><strong>Text-only fallbacks:</strong> Ensure every visual element linked has a text-only version for RAG
+            indexing.</li>
+        </ul>
       </section>
     </main>
 

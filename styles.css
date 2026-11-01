@@ -496,3 +496,891 @@ hr {
   border-top: 1px solid #e0ddd5;
   opacity: 0.6;
 }
+
+/* Portfolio home */
+
+.portfolio-page {
+  min-height: 100%;
+  height: auto;
+  display: block;
+  padding: 0;
+  background: #f8f9fb;
+  color: #080d18;
+  font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.portfolio-page .page {
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem clamp(1.25rem, 6vw, 5.5rem) 4rem;
+  background: transparent;
+}
+
+.portfolio-page .max-screen {
+  max-width: 1120px;
+}
+
+.portfolio-page .page main {
+  margin: 0;
+}
+
+.portfolio-page .site-header {
+  margin-bottom: clamp(3rem, 8vw, 6rem);
+}
+
+.portfolio-page .brand-wordmark {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.portfolio-page .brand-tagline {
+  margin-top: 0.25rem;
+  color: #687080;
+  font-size: 0.8rem;
+}
+
+.portfolio-page .hero {
+  margin-bottom: clamp(4rem, 9vw, 7rem);
+}
+
+.portfolio-page .hero-photo {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-bottom: 1.75rem;
+  padding: 3px;
+  border-radius: 50%;
+  background: #3561f1;
+  overflow: hidden;
+}
+
+.portfolio-page .hero-photo img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.portfolio-page .eyebrow {
+  margin-bottom: 0.6rem;
+  color: #697180;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.portfolio-page .hero h1 {
+  max-width: 1050px;
+  margin-bottom: 1.75rem;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.99;
+}
+
+.portfolio-page .lead {
+  max-width: 630px;
+  margin: 0 0 0.5rem auto;
+  color: #434d5e;
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.portfolio-page .current-role {
+  max-width: 630px;
+  margin: 0 0 0.75rem auto;
+  color: #697180;
+  font-size: 0.95rem;
+}
+
+.portfolio-page a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.portfolio-page .contact-row {
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.portfolio-page .contact-row a {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #e1e4e9;
+  border-radius: 50%;
+  background: #fff;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.portfolio-page .contact-row a:hover {
+  background: #eef1f6;
+  transform: translateY(-2px);
+}
+
+.portfolio-page .accordion {
+  margin-bottom: 0.9rem;
+  border: 1px solid #e8ebf0;
+  border-radius: 1.1rem;
+  background: #fff;
+}
+
+.portfolio-page .accordion-summary {
+  min-height: 4.5rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.portfolio-page .accordion .section-title {
+  margin: 0;
+  color: #0c1930;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  opacity: 1;
+  text-transform: none;
+}
+
+.portfolio-page .accordion-toggle {
+  background: #f2f4f7;
+}
+
+.portfolio-page .accordion-panel {
+  padding: 0 1.5rem 1.5rem;
+  border-top-color: #edf0f4;
+}
+
+.portfolio-page .section {
+  padding-top: 1.25rem;
+  padding-bottom: 0;
+  border-top: 0;
+}
+
+.portfolio-page .badge {
+  margin: 0 0.4rem 0.5rem 0;
+  background: #f0f3f8;
+  color: #233149;
+}
+
+.portfolio-page .badge-small {
+  background: #eef1f6 !important;
+}
+
+.portfolio-page .card {
+  padding: 1.25rem 0;
+  border-top-color: #e8ebf0;
+}
+
+.portfolio-page .card:first-of-type {
+  padding-top: 0.25rem;
+}
+
+.portfolio-page .box {
+  background: #f3f5f8;
+}
+
+.portfolio-page .portfolio-section {
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+  border-top: 1px solid #e5e8ed;
+}
+
+.portfolio-page .ideas-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.portfolio-page .ideas-heading h2 {
+  color: #0c1930;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.1;
+}
+
+.portfolio-page .articles-intro {
+  max-width: 34rem;
+  margin: 0;
+  color: #596477;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.portfolio-page .article-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0;
+}
+
+.portfolio-page .article-card {
+  height: 100%;
+  padding: 1.5rem;
+  border: 1px solid #e8ebf0;
+  border-radius: 1rem;
+  background: #fff;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-page .article-card:hover {
+  border-color: #d3dae5;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(13, 27, 49, 0.06);
+  transform: translateY(-2px);
+}
+
+.portfolio-page .article-card:active {
+  background: #f3f5f8;
+  border-color: #cbd3df;
+}
+
+.portfolio-page .article-card a {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.portfolio-page .article-card h3 {
+  margin-bottom: 0.6rem;
+  color: #0c1930;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.portfolio-page .article-meta {
+  color: #596477;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.portfolio-page .article-card .article-link {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  color: #0c1930;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.portfolio-page .article-card .article-link::after {
+  content: " →";
+}
+
+.portfolio-page .site-footer {
+  margin-top: 0;
+  padding: 3rem 0 0;
+  border-top-color: #e5e8ed;
+}
+
+.portfolio-page .site-footer h1 {
+  color: #0c1930;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.portfolio-page .site-footer p {
+  color: #596477;
+}
+
+.portfolio-page .site-footer p a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  background: #080d18;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 650px) {
+  .portfolio-page .hero h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .portfolio-page .lead,
+  .portfolio-page .current-role {
+    margin-left: 0;
+  }
+
+  .portfolio-page .ideas-heading,
+  .portfolio-page .article-list {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-page .portfolio-section {
+    padding: 3rem 0;
+  }
+}
+
+/* Article reading pages */
+
+.article-page {
+  min-height: 100%;
+  height: auto;
+  display: block;
+  padding: 0;
+  background: #f8f9fb;
+  color: #101725;
+  font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.article-page .page {
+  width: 100%;
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem clamp(1.25rem, 6vw, 5.5rem) 4rem;
+  background: transparent;
+}
+
+.article-page .site-header {
+  align-items: center;
+  margin-bottom: clamp(3rem, 8vw, 6rem);
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.article-page .brand-wordmark {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.article-page .brand-tagline {
+  margin-top: 0.25rem;
+  color: #697180;
+  font-size: 0.8rem;
+}
+
+.article-page .site-nav {
+  font-size: 0.9rem;
+}
+
+.article-page .nav-link {
+  color: #263248;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.article-page main {
+  margin: 0;
+}
+
+.article-page .section {
+  max-width: none;
+  padding: 0 0 3.5rem;
+  border: 0;
+}
+
+.article-page .section h1 {
+  max-width: 1050px;
+  margin-bottom: 1rem;
+  color: #0c1930;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.99;
+  overflow-wrap: break-word;
+}
+
+.article-page .section p.article-meta {
+  max-width: 630px;
+  margin: 0 0 2rem auto;
+  color: #434d5e;
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.article-page .section p {
+  max-width: 760px;
+  color: #303b4e;
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+}
+
+.article-page .section h2 {
+  max-width: 760px;
+  margin: 2.75rem 0 0.9rem;
+  color: #0c1930;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+}
+
+.article-page .section h3 {
+  max-width: 760px;
+  margin: 2rem 0 0.75rem;
+  color: #0c1930;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.article-page .section h4 {
+  max-width: 760px;
+  color: #0c1930;
+  font-weight: 700;
+}
+
+.article-page .section ul,
+.article-page .section ol,
+.article-page .section table,
+.article-page .section hr {
+  max-width: 760px;
+}
+
+.article-page .section ul {
+  list-style: disc;
+}
+
+.article-page .section ol {
+  list-style: decimal;
+}
+
+.article-page .section a {
+  color: #173c79;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.article-page .section blockquote {
+  max-width: 760px;
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid #93a6c2;
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: #f0f3f8;
+  color: #303b4e;
+}
+
+.article-page .section blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.article-page .section pre {
+  max-width: 760px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border: 1px solid #e5e8ed;
+  border-radius: 0.75rem;
+  background: #fff;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.article-page .section :not(pre)>code {
+  padding: 0.15em 0.35em;
+  border-radius: 0.25rem;
+  background: #eef1f6;
+  font-size: 0.9em;
+}
+
+.article-page .site-footer {
+  margin: 0;
+  padding: 3rem 0 0;
+  border-top-color: #e5e8ed;
+}
+
+.article-page .site-footer h1 {
+  color: #0c1930;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.article-page .site-footer p {
+  color: #596477;
+}
+
+.article-page .site-footer p a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  background: #080d18;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .article-page .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .article-page .section p.article-meta {
+    margin-left: 0;
+  }
+
+  .article-page .section {
+    padding-bottom: 2.5rem;
+  }
+
+  .article-page .section h1 {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+}
+
+/* Art and humanities notebook */
+
+.humanities-page,
+.humanities-article {
+  min-height: 100%;
+  height: auto;
+  display: block;
+  padding: 0;
+  background: #f1e9dc;
+  color: #30271f;
+  font-family: Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.humanities-page .humanities-shell,
+.humanities-article .humanities-shell {
+  width: min(100% - 3rem, 1020px);
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 5rem) 0;
+}
+
+.humanities-page a,
+.humanities-article a {
+  color: #783e2d;
+  text-decoration-color: #b88969;
+  text-underline-offset: 0.2em;
+}
+
+.humanities-header {
+  position: relative;
+  padding: 1.5rem 0 3.5rem;
+  border-bottom: 1px solid #bcae99;
+}
+
+.humanities-mark {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border: 1px solid #75634f;
+  border-radius: 50%;
+  color: #30271f !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.humanities-kicker,
+.humanities-label,
+.study-date,
+.essay-number,
+.essay-language {
+  color: #806b56;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.humanities-kicker {
+  margin: 2rem 0 0.75rem;
+}
+
+.humanities-header h1 {
+  margin: 0;
+  color: #30271f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.75rem, 10vw, 7rem);
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+
+.humanities-subtitle {
+  margin: 1rem 0 0;
+  color: #695846;
+  font-size: 1.1rem;
+}
+
+.humanities-intro {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.7fr) 2fr;
+  gap: clamp(2rem, 7vw, 6rem);
+  padding: clamp(3rem, 8vw, 6rem) 0;
+  border-bottom: 1px solid #bcae99;
+}
+
+.humanities-intro .humanities-label,
+.humanities-section-heading .humanities-label {
+  margin: 0.4rem 0 1rem;
+}
+
+.humanities-intro h2,
+.humanities-section h2 {
+  margin: 0 0 1.25rem;
+  color: #30271f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+
+.humanities-intro p:not(.humanities-label),
+.writings-intro {
+  max-width: 42rem;
+  color: #504438;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.humanities-section {
+  padding: clamp(3rem, 8vw, 5.5rem) 0;
+  border-bottom: 1px solid #bcae99;
+}
+
+.humanities-section-heading {
+  margin-bottom: 2.5rem;
+}
+
+.study-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #bcae99;
+}
+
+.study-list li {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.7fr) 2fr;
+  gap: clamp(1.5rem, 6vw, 5rem);
+  padding: 1.4rem 0;
+  border-bottom: 1px solid #cfc2af;
+}
+
+.study-date {
+  padding-top: 0.35rem;
+  letter-spacing: 0.08em;
+}
+
+.study-list h3 {
+  margin: 0 0 0.4rem;
+  color: #30271f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.study-list p {
+  margin: 0;
+  color: #756451;
+  font-size: 0.95rem;
+}
+
+.writings-intro {
+  margin: 0;
+}
+
+.essay-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.essay-card {
+  display: flex;
+  min-height: 17rem;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid #bcae99;
+  background: rgba(255, 252, 246, 0.35);
+  color: #30271f !important;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.essay-card:hover {
+  background: rgba(255, 252, 246, 0.75);
+  transform: translateY(-3px);
+}
+
+.essay-number {
+  margin-bottom: 2rem;
+}
+
+.essay-card h3 {
+  margin: 0 0 0.75rem;
+  color: #30271f;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.essay-card p {
+  margin: 0 0 1rem;
+  color: #655746;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.essay-language {
+  margin-top: auto;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+}
+
+.humanities-footer {
+  padding-top: 1.5rem;
+  color: #806b56;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+}
+
+.humanities-article .humanities-article-header {
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #bcae99;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
+}
+
+.humanities-article main {
+  margin: 0;
+}
+
+.humanities-article .section {
+  padding: 0 0 3rem;
+  border: 0;
+}
+
+.humanities-article .section h1 {
+  max-width: 850px;
+  margin-bottom: 1.25rem;
+  color: #30271f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.humanities-article .section .article-meta {
+  max-width: 42rem;
+  margin: 0 0 2.5rem;
+  color: #756451;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.humanities-article .section p,
+.humanities-article .section h2,
+.humanities-article .section h3,
+.humanities-article .section h4,
+.humanities-article .section ul,
+.humanities-article .section ol,
+.humanities-article .section blockquote,
+.humanities-article .section table,
+.humanities-article .section hr {
+  max-width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.humanities-article .section ul {
+  list-style: disc;
+}
+
+.humanities-article .section ol {
+  list-style: decimal;
+}
+
+.humanities-article .section p {
+  color: #40372d;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.35rem;
+}
+
+.humanities-article .section h2,
+.humanities-article .section h3,
+.humanities-article .section h4 {
+  color: #30271f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.humanities-article .section h2 {
+  margin-top: 2.5rem;
+  font-size: 1.8rem;
+}
+
+.humanities-article .section h3 {
+  margin-top: 2rem;
+  font-size: 1.45rem;
+}
+
+.humanities-article .section h4 {
+  font-size: 1.15rem;
+}
+
+.humanities-article .section blockquote {
+  padding: 1rem 1.25rem;
+  border-left: 2px solid #9a7656;
+  background: rgba(255, 252, 246, 0.55);
+}
+
+.humanities-article .section blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.humanities-article .section th,
+.humanities-article .section td {
+  border-color: #cfc2af;
+}
+
+.humanities-article .section th {
+  background: rgba(255, 252, 246, 0.55);
+}
+
+.humanities-article .humanities-footer {
+  border-top: 1px solid #bcae99;
+}
+
+@media (max-width: 700px) {
+
+  .humanities-page .humanities-shell,
+  .humanities-article .humanities-shell {
+    width: min(100% - 2rem, 1020px);
+  }
+
+  .humanities-intro,
+  .study-list li {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .essay-list {
+    grid-template-columns: 1fr;
+  }
+
+  .essay-card {
+    min-height: 14rem;
+  }
+
+  .essay-number {
+    margin-bottom: 1.25rem;
+  }
+}

@@ -1111,7 +1111,8 @@ hr {
 .humanities-subtitle {
   margin: 1rem 0 0;
   color: #695846;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-style: italic;
 }
 
 .humanities-intro {

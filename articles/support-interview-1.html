@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/bio.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./../styles.css">
+  <title>Interviewing for a support role | Carmen L.</title>
+</head>
+
+<body class="article-page">
+  <div class="page">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-wordmark">CARMEN LÓPEZ</span>
+        <span class="brand-tagline">Support Engineer</span>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html#ideas" class="nav-link nav-link--active">← All ideas</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <h1>Interviewing for a support role</h1>
+        <p class="article-meta">
+          Support isn't a script—it's a decision-making discipline. These questions explore how to investigate
+          unfamiliar issues, use evidence, and turn a resolution into reusable knowledge.
+        </p>
+        <br />
+        <p>
+          Each support interview question probes a different muscle: investigating without a map, diagnosing from
+          evidence, exercising judgment under uncertainty, and making the next investigation easier. The examples below
+          show how similar questions can look in a SaaS DevTools company and an e-commerce business.
+        </p>
+
+        <h2>1. Troubleshooting an undocumented, unique technical issue</h2>
+        <p>
+          <strong>What this tests:</strong> Systematic debugging, comfort with ambiguity, and whether you turn
+          one-off firefighting into reusable knowledge. When no documentation exists, interviewers want to see how
+          you build the map while walking the territory.
+        </p>
+
+        <h3>Sample questions</h3>
+        <p><strong>SaaS DevTools:</strong></p>
+        <ul>
+          <li>
+            A customer's CI pipeline fails only on a specific runner image. There are no docs because the issue is a
+            version-skew interaction between their SDK and a runtime. How would you investigate, what would you
+            capture, and what would you leave behind for the next person?
+          </li>
+          <li>
+            A developer reports that your CLI tool silently exits with code 0 on one OS but fails on another. There's
+            no known issue or runbook. How do you proceed?
+          </li>
+        </ul>
+        <p><strong>E-commerce:</strong></p>
+        <ul>
+          <li>
+            Checkout fails only for one payment method in one region during high traffic. There's no playbook. How do
+            you reproduce, isolate, and document it?
+          </li>
+          <li>
+            A discount code applies correctly in the cart but disappears at payment for a subset of accounts. No
+            documentation covers this. Walk us through your investigation.
+          </li>
+        </ul>
+
+        <h3>A strong answer structure</h3>
+        <ol>
+          <li><strong>Reproduce:</strong> Establish a reliable reproduction, or explain clearly why you cannot yet.</li>
+          <li><strong>Isolate:</strong> Narrow the variables, such as environment, version, region, device, or account.</li>
+          <li><strong>Hypothesize:</strong> Name the most likely cause and the evidence that would confirm or disprove it.</li>
+          <li><strong>Instrument:</strong> Capture the exact error surface: logs, stack traces, requests and responses, or gateway telemetry.</li>
+          <li><strong>Confirm:</strong> Test the hypothesis with a controlled change.</li>
+          <li><strong>Document:</strong> Write an internal runbook and, where appropriate, a public troubleshooting page or decision tree.</li>
+          <li><strong>Reflect:</strong> Explain what you would do differently next time, such as capturing a reproducible artifact earlier.</li>
+        </ol>
+
+        <h3>Example answer: SaaS DevTools</h3>
+        <blockquote>
+          <p>
+            “Last year a customer opened a ticket saying their CI pipeline failed, but only on one runner image. It
+            worked on every other image, and there was nothing in our docs because it turned out to be a version-skew
+            interaction between their SDK and a runtime.
+          </p>
+          <p>
+            I started by reproducing it. I pulled their pipeline config and spun up a sandbox with the same runner
+            image, and I got the same failure—so at least it was real and not a one-off. Then I isolated variables:
+            the same image with a different SDK version passed, so I bisected across SDK versions and found the break
+            point. I captured the exact error surface—the stack trace and the runtime error—and read the source to
+            understand what changed between those versions. My hypothesis was that the SDK was calling a runtime API
+            that had shifted behavior, and I confirmed it by pinning the runtime version and watching the failure
+            disappear.
+          </p>
+          <p>
+            The fix for the customer was a version pin plus an upgrade path. But the more important output was the
+            documentation: I wrote an internal runbook with the exact version matrix and a public troubleshooting page
+            so the next person doesn't start from zero. What I'd do differently is capture the reproduction artifact
+            before I touched anything—I changed a couple of things early on that I had to unwind, and that cost me
+            time.”
+          </p>
+        </blockquote>
+
+        <h2>2. Using logs to solve the issue</h2>
+        <p>
+          <strong>What this tests:</strong> Whether you can turn raw telemetry into a causal story and actively look
+          for evidence instead of stopping at the first plausible cause.
+        </p>
+
+        <h3>Sample questions</h3>
+        <p><strong>SaaS DevTools:</strong></p>
+        <ul>
+          <li>
+            API calls intermittently return 401s. Logs suggest an auth token-refresh race. How would you correlate
+            request IDs across the auth service and gateway, find the pattern, and confirm it?
+          </li>
+          <li>
+            A customer's webhook deliveries succeed in the dashboard, but their endpoint never receives them. What
+            log evidence would you gather and how would you trace it?
+          </li>
+        </ul>
+        <p><strong>E-commerce:</strong></p>
+        <ul>
+          <li>
+            Orders are marked “paid” but never fulfilled. How would you trace order IDs across payment webhook logs
+            and fulfillment queue logs to find the break?
+          </li>
+          <li>
+            A subset of customers report order confirmation emails arriving hours late. What log evidence would tell
+            you where the delay enters the pipeline?
+          </li>
+        </ul>
+
+        <h3>A strong answer structure</h3>
+        <ol>
+          <li><strong>Start from the symptom:</strong> State precisely what's broken and what “normal” looks like.</li>
+          <li><strong>Form a hypothesis:</strong> Name the most likely failure point.</li>
+          <li><strong>Look for disconfirming evidence:</strong> Don't only seek confirmation; test what could disprove your hypothesis.</li>
+          <li><strong>Correlate:</strong> Follow correlation IDs, request IDs, order IDs, and timelines across services.</li>
+          <li><strong>Name the tool:</strong> Mention the log aggregator, tracing, or dashboards, while keeping the focus on your reasoning.</li>
+          <li><strong>Resolve:</strong> Fix the root cause and add a safeguard, such as a retry, idempotency, or timing fix.</li>
+          <li><strong>State what you ruled out:</strong> The elimination process is part of the answer.</li>
+        </ol>
+
+        <h3>Example answer: E-commerce</h3>
+        <blockquote>
+          <p>
+            “We had a spike where orders showed as ‘paid’ in the admin but were never fulfilled. The customer-facing
+            symptom was silence—no shipping confirmation—so I started from the fulfillment queue and worked backward.
+          </p>
+          <p>
+            My first hypothesis was that the queue consumer was down, but the logs showed the consumer was healthy and
+            idle. That was the disconfirming evidence I needed, so I shifted to the payment side. I traced a handful of
+            affected order IDs across the payment webhook logs and the fulfillment queue logs, and the pattern was
+            clear: the webhook fired, but the retry was dropped when the payment provider returned a transient error.
+            The order was marked paid at the payment layer, but the fulfillment event never got replayed.
+          </p>
+          <p>
+            I confirmed it by replaying one of the affected events manually and watching the order flow through to
+            fulfillment. The resolution was to replay the backlog and add an idempotency and retry safeguard so a
+            dropped webhook doesn't orphan an order. What I'd emphasize is that the queue being healthy was the red
+            herring—the evidence that mattered was the gap between the two logs, not either one alone.”
+          </p>
+        </blockquote>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <h1>Get in touch</h1>
+      <p>Ready to create exceptional customer experiences together?</p>
+      <br />
+      <p><a href="mailto:carmenbaez2000@gmail.com">Say hello 👋</a></p>
+      <br />
+      <br />
+      <br />
+    </footer>
+  </div>
+</body>
+
+</html>

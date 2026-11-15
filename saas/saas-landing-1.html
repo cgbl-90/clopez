@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Landing Page (v1.0)</title>
+    <style>
+        /* ===== Global Grey Wireframe Styles ===== */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #222;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        p {
+            color: #555;
+        }
+
+        section {
+            padding: 3rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ===== Grey Buttons ===== */
+        button,
+        .btn {
+            background: #e0e0e0;
+            color: #333;
+            border: 1px solid #bbb;
+            padding: 0.6rem 1.4rem;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        button:hover,
+        .btn:hover {
+            background: #d0d0d0;
+        }
+
+        .btn-primary {
+            background: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+        .btn-primary:hover {
+            background: #555;
+        }
+
+        /* ===== Sticky Nav ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 1.5rem;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .nav-inner a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-inner a:hover {
+            color: #000;
+        }
+
+        /* ===== Hero (Centered) ===== */
+        .hero-center {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-visual-large {
+            background: #e8e8e8;
+            border: 1px dashed #bbb;
+            height: 380px;
+            margin-top: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 0.9rem;
+            border-radius: 6px;
+        }
+
+        /* ===== Social Proof (Logos) ===== */
+        .logo-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .logo-box {
+            width: 110px;
+            height: 40px;
+            background: #e8e8e8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* ===== Problem Section ===== */
+        .problem-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .problem-item {
+            background: #f5f5f5;
+            border-left: 4px solid #ccc;
+            padding: 1.25rem;
+            border-radius: 4px;
+        }
+
+        /* ===== Solution / Intro ===== */
+        .solution-block {
+            background: #efefef;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 6px;
+        }
+
+        /* ===== Features ===== */
+        .feature-content {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: center;
+        }
+
+        .feature-content>div:first-child {
+            flex: 1;
+        }
+
+        .feature-visual {
+            flex: 1;
+            background: #e8e8e8;
+            border: 1px dashed #bbb;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 0.9rem;
+            border-radius: 6px;
+        }
+
+        /* ===== How it Works ===== */
+        .steps {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            text-align: left;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 200px;
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            border-radius: 6px;
+        }
+
+        .step h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== Testimonials ===== */
+        .testimonial-grid {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .testimonial {
+            flex: 1;
+            min-width: 240px;
+            border: 1px solid #e0e0e0;
+            background: #fafafa;
+            padding: 1.5rem;
+            border-radius: 6px;
+        }
+
+        .testimonial p {
+            color: #444;
+        }
+
+        /* ===== Pricing ===== */
+        .pricing-grid {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            flex: 1;
+            min-width: 220px;
+            border: 1px solid #ddd;
+            background: #fafafa;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .pricing-card.recommended {
+            border: 2px solid #555;
+            background: #efefef;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .pricing-card ul li {
+            padding: 0.3rem 0;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.75rem;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            color: #333;
+            padding: 0.5rem 0;
+        }
+
+        .faq-question:hover {
+            color: #000;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 0.5rem;
+            color: #555;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* ===== Final CTA ===== */
+        .final-cta {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: #e8e8e8;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: #ddd;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+
+            .feature-content,
+            .steps,
+            .testimonial-grid,
+            .pricing-grid {
+                flex-direction: column !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <strong>Logo</strong>
+            <div>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <button>Start Free</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero (Centered with large visual) -->
+    <section class="hero">
+        <div class="container hero-center">
+            <h1>Close Books 2x Faster</h1>
+            <p>Automated workflows for lean finance teams. No spreadsheets, no manual data entry.</p>
+            <div style="margin-top: 1.5rem;">
+                <button class="btn-primary">Start Free Trial</button>
+            </div>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #888;">No credit card required.</p>
+            <div class="hero-visual-large">
+                [ Dashboard / Product Screenshot ]
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof (Logos) -->
+    <section class="social-proof">
+        <div class="container" style="text-align: center;">
+            <p style="margin: 0;">Trusted by finance teams at</p>
+            <div class="logo-row">
+                <div class="logo-box"></div>
+                <div class="logo-box"></div>
+                <div class="logo-box"></div>
+                <div class="logo-box"></div>
+                <div class="logo-box"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section (The Pain) -->
+    <section class="problem">
+        <div class="container">
+            <h2>The old way is broken</h2>
+            <div class="problem-list">
+                <div class="problem-item">
+                    <strong>Problem 1:</strong> Your team spends 20+ hours a week manually reconciling data across three
+                    different spreadsheets.
+                </div>
+                <div class="problem-item">
+                    <strong>Problem 2:</strong> You can't trust the numbers because no one knows which version is the
+                    source of truth.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution / Intro -->
+    <section class="solution">
+        <div class="container">
+            <h2>Meet [Product Name]</h2>
+            <p>The automated ledger that keeps everyone on the same page.</p>
+            <div class="solution-block">
+                <p style="margin: 0;"><strong>Result:</strong> Close your books in 3 days instead of 3 weeks. 100%
+                    accuracy, zero manual entry.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features (Benefit-Led) -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Built for speed and accuracy</h2>
+            <div class="feature-content">
+                <div>
+                    <h3>Automated Reconciliation</h3>
+                    <p>Connect your bank and we match transactions instantly. Stop chasing receipts.</p>
+                </div>
+                <div class="feature-visual">[ Feature Visual ]</div>
+            </div>
+            <div class="feature-content">
+                <div>
+                    <h3>Real-time Dashboards</h3>
+                    <p>See your burn rate and runway live. No more waiting for month-end reports.</p>
+                </div>
+                <div class="feature-visual">[ Feature Visual ]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works (3 Steps) -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 style="text-align: center;">How it works</h2>
+            <div class="steps">
+                <div class="step">
+                    <h4>1. Connect</h4>
+                    <p>Link your bank accounts and tools in one click.</p>
+                </div>
+                <div class="step">
+                    <h4>2. Automate</h4>
+                    <p>Set rules for categorization. The system learns as you go.</p>
+                </div>
+                <div class="step">
+                    <h4>3. Close</h4>
+                    <p>Review the dashboard and hit approve. Done.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What our customers say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"We cut our close time from 14 days to 3. The ROI was immediate."</p>
+                    <p style="margin: 0; font-size: 0.9rem;"><strong>— Sarah J., CFO at TechCorp</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"Finally, a tool my team actually enjoys using. No more Excel errors."</p>
+                    <p style="margin: 0; font-size: 0.9rem;"><strong>— Mike R., Controller at GrowthInc</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 style="text-align: center;">Simple, transparent pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <p style="font-size: 1.5rem; color: #333;"><strong>$29</strong>/mo</p>
+                    <ul>
+                        <li>Up to 3 users</li>
+                        <li>Basic reports</li>
+                    </ul>
+                    <button>Get Started</button>
+                </div>
+                <div class="pricing-card recommended">
+                    <h3>Pro</h3>
+                    <p style="font-size: 1.5rem; color: #333;"><strong>$79</strong>/mo</p>
+                    <ul>
+                        <li>Unlimited users</li>
+                        <li>Advanced automation</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="btn-primary">Start Free Trial</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p style="font-size: 1.5rem; color: #333;"><strong>Custom</strong></p>
+                    <ul>
+                        <li>SSO / SAML</li>
+                        <li>Dedicated manager</li>
+                    </ul>
+                    <button>Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">Is my data secure?</div>
+                <div class="faq-answer">Yes, we are SOC 2 Type II compliant and use bank-level encryption.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I cancel anytime?</div>
+                <div class="faq-answer">Absolutely. There are no long-term contracts for the Pro plan.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you integrate with QuickBooks?</div>
+                <div class="faq-answer">Yes, we have native two-way sync with QuickBooks and Xero.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to close your books faster?</h2>
+            <p>Join 5,000+ finance teams saving time every month.</p>
+            <div style="margin-top: 1.5rem;">
+                <button class="btn-primary">Start Your Free Trial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="margin: 0 0 0.5rem;">Logo | Privacy | Terms | Contact</p>
+            <p style="margin: 0; font-size: 0.85rem;">&copy; 2026 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Script
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

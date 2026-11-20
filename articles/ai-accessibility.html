@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/bio.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./../styles.css">
+    <title>AI and digital inaccessibility | Carmen L.</title>
+</head>
+
+<body class="article-page">
+    <div class="page">
+        <header class="site-header">
+            <div class="brand">
+                <span class="brand-wordmark">CARMEN LÓPEZ</span>
+                <span class="brand-tagline">Support Engineer</span>
+            </div>
+            <nav class="site-nav">
+                <a href="../index.html#ideas" class="nav-link nav-link--active">← All ideas</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="section">
+                <h1>AI and digital inaccessibility</h1>
+                <p class="article-meta">
+                    AI is making the web less accessible, and it's happening faster than before. Here's why.
+                </p>
+                <br />
+
+                <p>
+                    Most code on the internet is already broken for people who use screen readers, keyboards, or voice
+                    navigation. According to WebAIM, around 96% of home pages have accessibility failures. That's the
+                    web AI
+                    learned from. So when you ask an AI to build a website, it copies patterns that were already
+                    inaccessible. It
+                    doesn't know they're wrong. It just knows they look familiar.
+                </p>
+                <p>
+                    And here's the thing: when people ask AI to create a website, they say "make me a portfolio with a
+                    hero
+                    section, a project gallery, and a contact form." They don't say "make it accessible" or "follow WCAG
+                    2.1" or
+                    "comply with the ADA." Why would they? Most people don't think about it. The visual result is what
+                    matters to
+                    them. So the AI optimizes for what was asked. Accessibility never enters the prompt, so it never
+                    enters the
+                    output.
+                </p>
+                <p>
+                    Even when you do ask, the results are often absurd. Ask for an "accessible button" and you might get
+                    a
+                    <code>&lt;div&gt;</code> with a click handler, styled to look clickable but invisible to assistive
+                    technology. Ask for a modal and you get something that looks right in a screenshot but traps
+                    keyboard users
+                    with no escape. Tell it to add ARIA and it sprinkles labels on random elements like it's decoration.
+                    The AI
+                    learned what interfaces look like. It didn't learn how they work for people who don't use a mouse.
+                </p>
+                <p>
+                    These aren't edge cases. They're the default output. A 2025 ACM study found that LLMs can produce
+                    valid HTML
+                    but "frequently fail to meet full accessibility compliance without further prompting and human
+                    interventions." Even when prompted specifically for accessibility, improvements are partial. Alt
+                    text and
+                    status management stay broken.
+                </p>
+                <p>
+                    And better prompts only go so far. Researchers compared accessibility-focused prompts against
+                    regular ones.
+                    The focused prompts did improve compliance, but didn't eliminate failures. Accessibility isn't a
+                    feature you
+                    bolt on with a sentence. It's a property of correct implementation: focus flows logically, semantics
+                    match
+                    behavior, state changes get announced, and everything responds to keyboards and screen readers. AI
+                    trained on
+                    visual patterns can't reliably infer that.
+                </p>
+                <p>
+                    So what happens when this code ships? Real people hit real barriers. A screen reader user can't
+                    complete a
+                    purchase because a dropdown has no accessible name. A keyboard user gets trapped in a modal with no
+                    way out.
+                    Someone using voice navigation can't activate a "button" that's actually a div. A person with a
+                    cognitive
+                    disability can't parse form errors that were never programmatically connected to their fields. These
+                    aren't
+                    hypothetical. They're predictable.
+                </p>
+                <p>
+                    The good news is that the same AI tools can be pointed at the problem. Several MCP servers and agent
+                    skills
+                    now let AI audit its own output before shipping:
+                </p>
+
+                <h2>wcag-accessibility-mcp</h2>
+                <p>
+                    Gives AI agents WCAG analysis and refactoring tools. It supports WCAG 2.0, 2.1, and 2.2, audits live
+                    URLs or
+                    raw HTML, and suggests fixes.
+                    <a
+                        href="https://github.com/alexanderuk82/mcp-wcag-accessibility">github.com/alexanderuk82/mcp-wcag-accessibility</a>
+                </p>
+
+                <h2>@accesslint/mcp</h2>
+                <p>
+                    Built for accessible agentic coding. It audits HTML, files, and URLs, and includes a diff tool to
+                    verify
+                    fixes against a baseline. In benchmarks, agents using it fixed 99.5% of violations, versus 93.5%
+                    working
+                    alone.
+                    <a href="https://github.com/AccessLint/mcp">github.com/AccessLint/mcp</a>
+                </p>
+
+                <h2>@a11yeco/mcp</h2>
+                <p>
+                    Runs entirely offline with zero telemetry. It scans localhost servers, evaluates HTML in memory
+                    before it's
+                    written to disk, and catches regressions against baselines.
+                    <a href="https://www.npmjs.com/package/@a11yeco/mcp">npmjs.com/package/@a11yeco/mcp</a>
+                </p>
+
+                <h2>a11y-agent-skills (smukh)</h2>
+                <p>
+                    Encodes accessibility expertise for specific UI patterns like comboboxes and autocomplete. Instead
+                    of
+                    auditing after the fact, it guides generation toward correct patterns from the start.
+                    <a href="https://github.com/smukh/a11y-agent-skills">github.com/smukh/a11y-agent-skills</a>
+                </p>
+
+                <h2>a11y-agent-kit (mfairchild365)</h2>
+                <p>
+                    Includes a skill for building accessible UI and a read-only reviewer agent that audits code, runs
+                    axe-core,
+                    checks the rendered UI in a real browser, and produces a prioritized fix list without touching your
+                    code.
+                    <a
+                        href="https://github.com/mfairchild365/a11y-agent-kit">github.com/mfairchild365/a11y-agent-kit</a>
+                </p>
+
+                <p>
+                    These tools won't catch everything. Keyboard interaction logic, screen reader announcement order,
+                    and zoom
+                    behavior still need human testing. But they catch the common machine-detectable failures before they
+                    ship.
+                    And they give AI the feedback loop it currently lacks.
+                </p>
+                <p>
+                    The accessibility of the AI-generated web won't be decided by the AI. It'll be decided by whether
+                    the people
+                    using it ask for accessibility, check the output, and install the tools that make checking possible.
+                    The
+                    tools exist. The prompts can include it. The question is whether anyone bothers.
+                </p>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <h1>Get in touch</h1>
+            <p>Ready to create exceptional customer experiences together?</p>
+            <br />
+            <p><a href="mailto:carmenbaez2000@gmail.com">Say hello 👋</a></p>
+            <br />
+            <br />
+            <br />
+        </footer>
+    </div>
+</body>
+
+</html>

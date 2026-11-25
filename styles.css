@@ -164,10 +164,6 @@ ul {
   font-weight: 500;
 }
 
-.nav-divider {
-  opacity: 0.4;
-}
-
 /* Hero */
 
 .hero {
@@ -227,12 +223,6 @@ ul {
 
 /* Skills */
 
-.badge-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
 .badge {
   display: inline-block;
   padding: 0.4rem 0.9rem;
@@ -281,10 +271,6 @@ ul {
   width: 18px;
   height: 18px;
   margin-top: 2px;
-}
-
-.about-text {
-  margin-top: 0.5rem;
 }
 
 /* Home accordions */
@@ -1033,7 +1019,7 @@ hr {
   }
 }
 
-/* Art and humanities notebook */
+/* Art and humanities */
 
 .humanities-page,
 .humanities-article {
@@ -1044,154 +1030,77 @@ hr {
   background: #f1e9dc;
   color: #30271f;
   font-family: Georgia, "Times New Roman", serif;
-  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-.humanities-page .humanities-shell,
-.humanities-article .humanities-shell {
-  width: min(100% - 3rem, 1020px);
+.humanities-shell {
+  width: min(100% - 6rem, 1074px);
   margin: 0 auto;
-  padding: clamp(2rem, 6vw, 5rem) 0;
+  padding: 3rem 0;
 }
 
 .humanities-page a,
 .humanities-article a {
   color: #783e2d;
   text-decoration-color: #b88969;
+  text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
 }
 
-.humanities-header {
-  position: relative;
-  padding: 1.5rem 0 3.5rem;
-  border-bottom: 1px solid #bcae99;
-}
-
-.humanities-mark {
-  display: grid;
-  width: 3.25rem;
-  height: 3.25rem;
-  place-items: center;
-  border: 1px solid #75634f;
-  border-radius: 50%;
-  color: #30271f !important;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-}
-
-.humanities-kicker,
 .humanities-label,
-.study-date,
 .essay-number,
-.essay-language {
-  color: #806b56;
+.essay-card .badge-small,
+.humanities-footer {
   font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.humanities-label {
+  margin: 0 0 0.85rem;
+  color: #806b56;
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
-.humanities-kicker {
-  margin: 2rem 0 0.75rem;
+.humanities-bio {
+  max-width: 43rem;
+  padding-bottom: 3.5rem;
 }
 
-.humanities-header h1 {
+.humanities-bio h1 {
+  margin: 0 0 0.85rem;
+  color: #30271f;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.humanities-bio>p:last-child {
   margin: 0;
-  color: #30271f;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.75rem, 10vw, 7rem);
-  font-weight: 400;
-  letter-spacing: -0.07em;
-  line-height: 0.95;
-}
-
-.humanities-subtitle {
-  margin: 1rem 0 0;
-  color: #695846;
-  font-size: 1rem;
-  font-style: italic;
-}
-
-.humanities-intro {
-  display: grid;
-  grid-template-columns: minmax(9rem, 0.7fr) 2fr;
-  gap: clamp(2rem, 7vw, 6rem);
-  padding: clamp(3rem, 8vw, 6rem) 0;
-  border-bottom: 1px solid #bcae99;
-}
-
-.humanities-intro .humanities-label,
-.humanities-section-heading .humanities-label {
-  margin: 0.4rem 0 1rem;
-}
-
-.humanities-intro h2,
-.humanities-section h2 {
-  margin: 0 0 1.25rem;
-  color: #30271f;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  font-weight: 400;
-  letter-spacing: -0.055em;
-  line-height: 1.08;
-}
-
-.humanities-intro p:not(.humanities-label),
-.writings-intro {
-  max-width: 42rem;
-  color: #504438;
+  color: #4a3f33;
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
-.humanities-section {
-  padding: clamp(3rem, 8vw, 5.5rem) 0;
-  border-bottom: 1px solid #bcae99;
+.humanities-section-heading h2 {
+  margin: 0 0 0.85rem;
+  color: #30271f;
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.writings-intro {
+  max-width: 43rem;
+  margin: 0;
+  color: #4a3f33;
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
 .humanities-section-heading {
-  margin-bottom: 2.5rem;
-}
-
-.study-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid #bcae99;
-}
-
-.study-list li {
-  display: grid;
-  grid-template-columns: minmax(8rem, 0.7fr) 2fr;
-  gap: clamp(1.5rem, 6vw, 5rem);
-  padding: 1.4rem 0;
-  border-bottom: 1px solid #cfc2af;
-}
-
-.study-date {
-  padding-top: 0.35rem;
-  letter-spacing: 0.08em;
-}
-
-.study-list h3 {
-  margin: 0 0 0.4rem;
-  color: #30271f;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-}
-
-.study-list p {
-  margin: 0;
-  color: #756451;
-  font-size: 0.95rem;
-}
-
-.writings-intro {
-  margin: 0;
+  margin-bottom: 3rem;
 }
 
 .essay-list {
@@ -1202,52 +1111,77 @@ hr {
 
 .essay-card {
   display: flex;
-  min-height: 17rem;
+  min-height: 18.5rem;
   flex-direction: column;
-  padding: 1.5rem;
-  border: 1px solid #bcae99;
-  background: rgba(255, 252, 246, 0.35);
+  padding: 1.5rem 1.25rem 1.25rem;
+  border: 1px solid #c9b99f;
+  background: rgba(255, 252, 246, 0.2);
   color: #30271f !important;
-  text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  text-decoration: none !important;
 }
 
 .essay-card:hover {
-  background: rgba(255, 252, 246, 0.75);
-  transform: translateY(-3px);
+  background: rgba(255, 252, 246, 0.6);
+  border-color: #9c886e;
+}
+
+.essay-card:focus-visible {
+  outline: 2px solid #783e2d;
+  outline-offset: 3px;
 }
 
 .essay-number {
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
+  color: #806b56;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
 }
 
 .essay-card h3 {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.85rem;
   color: #30271f;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .essay-card p {
-  margin: 0 0 1rem;
+  margin: 0 0 1.5rem;
   color: #655746;
   font-size: 0.95rem;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
-.essay-language {
-  margin-top: auto;
+.essay-card .badge-small {
+  margin: auto 0 0;
+  align-self: flex-start;
+  display: inline-block;
+  padding: 0.42rem 0.75rem;
+  border-radius: 999px;
+  background: #efd3be;
+  color: #703b23;
   font-size: 0.62rem;
+  font-weight: 700;
   letter-spacing: 0.1em;
+  line-height: 1;
 }
 
 .humanities-footer {
-  padding-top: 1.5rem;
+  margin-top: 5.5rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid #c9b99f;
   color: #806b56;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
+  text-transform: none;
+  letter-spacing: 0;
 }
+
+.humanities-footer p {
+  margin: 0;
+}
+
+/* Humanities article */
 
 .humanities-article .humanities-article-header {
   margin-bottom: clamp(3rem, 7vw, 5rem);
@@ -1270,7 +1204,6 @@ hr {
   max-width: 850px;
   margin-bottom: 1.25rem;
   color: #30271f;
-  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.75rem, 7vw, 5rem);
   font-weight: 400;
   letter-spacing: -0.06em;
@@ -1318,7 +1251,6 @@ hr {
 .humanities-article .section h3,
 .humanities-article .section h4 {
   color: #30271f;
-  font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   letter-spacing: -0.035em;
 }
@@ -1361,16 +1293,12 @@ hr {
 }
 
 @media (max-width: 700px) {
-
-  .humanities-page .humanities-shell,
-  .humanities-article .humanities-shell {
-    width: min(100% - 2rem, 1020px);
+  .humanities-shell {
+    width: min(100% - 2rem, 1074px);
   }
 
-  .humanities-intro,
-  .study-list li {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+  .humanities-section-heading {
+    margin-bottom: 2rem;
   }
 
   .essay-list {
@@ -1381,7 +1309,7 @@ hr {
     min-height: 14rem;
   }
 
-  .essay-number {
-    margin-bottom: 1.25rem;
+  .humanities-footer {
+    margin-top: 3rem;
   }
 }
